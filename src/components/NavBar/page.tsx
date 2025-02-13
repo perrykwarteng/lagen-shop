@@ -6,9 +6,13 @@ import ProfileIcon from "../../../public/icons/profile-icon.svg";
 import Logo from "../../../public/icons/NavLogo.svg";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 
-export const NavBar = ({ showProfile }: { showProfile: any }) => {
+export const NavBar = ({
+  showProfile,
+}: {
+  showProfile: MouseEventHandler<HTMLImageElement>;
+}) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
 

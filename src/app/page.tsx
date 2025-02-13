@@ -8,11 +8,11 @@ import { NewsLetterForm } from "@/components/NewsLetterForm/pasge";
 import { ProductCard } from "@/components/ProductCard/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
 import Link from "next/link";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 
 export default function Home() {
   const [showProfile, setShowProfile] = useState(false);
-  const handleShowProfile = () => {
+  const handleShowProfile:MouseEventHandler<HTMLImageElement> = () => {
     setShowProfile(!showProfile);
     console.log(showProfile);
   };
