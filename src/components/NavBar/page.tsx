@@ -11,13 +11,9 @@ import { useState } from "react";
 export const NavBar = () => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
 
   const handelShowSearch = () => {
     setShowSearch(!showSearch);
-  };
-  const handelShowProfile = () => {
-    setShowSearch(!showProfile);
   };
 
   return (
@@ -80,11 +76,7 @@ export const NavBar = () => {
           </Link>
         </li>
 
-        <li
-          className={
-            pathName == "" ? "active border-b-2 border-black" : ""
-          }
-        >
+        <li className={pathName == "" ? "active border-b-2 border-black" : ""}>
           <Link
             href=""
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
