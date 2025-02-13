@@ -25,22 +25,22 @@ export const Hero = () => {
   }, [instanceRef]);
 
   return (
-    <div ref={sliderRef} className="keen-slider min-h-[500px]">
-      <div className="keen-slider__slide bg-slate-500  ">
+    <div ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide">
         <Image
           src={GirlBanner}
           alt="banner one"
           className="h-full bg-cover bg-no-repeat"
         />
       </div>
-      <div className="keen-slider__slide bg-slate-700">
+      <div className="keen-slider__slide">
         <Image
           src={ManBanner}
           alt="banner one"
           className="h-full bg-cover bg-no-repeat"
         />
       </div>
-      <div className="keen-slider__slide bg-slate-700">
+      <div className="keen-slider__slide">
         <Image
           src={SmallGirlBanner}
           alt="banner one"

@@ -12,7 +12,7 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
-        <div className="px-10 py-10">
+        <div className="px-5 md:px-10 py-5 md:py-10">
           <Heading heading={"Trending"} />
           <div className="w-full flex items-center justify-center flex-wrap gap-4 mt-8">
             <div className="">

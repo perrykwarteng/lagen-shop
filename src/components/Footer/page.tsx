@@ -20,7 +20,7 @@ export const Footer = () => {
                 The Brand
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                La&apos;GenXLakopue
+                La'GenXLakopue
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
                 Blog
