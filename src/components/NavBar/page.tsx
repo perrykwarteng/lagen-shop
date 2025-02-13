@@ -8,7 +8,7 @@ import { FaBars, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-export const NavBar = () => {
+export const NavBar = ({ showProfile }: { showProfile: any }) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
 
@@ -48,6 +48,7 @@ export const NavBar = () => {
           <Image
             src={ProfileIcon}
             alt={"profile-icon"}
+            onClick={showProfile}
             className="cursor-pointer w-[20px] md:w-[35px]"
           />
         </div>
