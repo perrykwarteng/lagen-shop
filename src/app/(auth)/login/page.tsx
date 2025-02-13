@@ -19,7 +19,7 @@ export default function Login() {
           </div>
         </div>
 
-        <div className="my-10 flex justify-center items-center text-[#4A4844] rounded-md shadow-lg gap-3 min-w-[400px]">
+        <div className="my-10 flex justify-center items-center text-[#4A4844] rounded-md shadow-lg gap-3 min-w-[400px] cursor-pointer">
           <Image src={GoogleImage} alt=""></Image>
           <p>Log in with google</p>
         </div>
