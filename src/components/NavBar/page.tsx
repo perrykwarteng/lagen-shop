@@ -24,16 +24,18 @@ export const NavBar = ({
     <div className="">
       <div className="nav1 flex items-center justify-between px-5 md:px-10 py-5 border-b border-black">
         <div className="list one flex items-center gap-3 lg:gap-8">
-          <p className="text-[14px] font-[500]">GH¢</p>
+          <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
             <FaBars className="cursor-pointer" />
             <FaSearch className="cursor-pointer" onClick={handelShowSearch} />
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
         </div>
-        <div className="logo md:w-[100px] lg:w-[200px]">
+        {/* <div className="logo md:w-[100px] lg:w-[200px]"> */}
+        <div className="logo">
           <Link href="/">
-            <Image className="w-full" src={Logo} alt="Logo" />
+            {/* <Image className="w-full" src={Logo} alt="Logo" /> */}
+            <p className="md:text-[35px] lg:text-[45px]">LAGEN & BUANE</p>
           </Link>
         </div>
         <div className="list two flex items-center gap-3 lg:gap-8">
@@ -68,22 +70,24 @@ export const NavBar = ({
         </li>
         <li
           className={
-            pathName == "/collection"
-              ? "active border-b border-black border-2"
-              : ""
+            pathName == "/collections" ? "active border-black border-b-2" : ""
           }
         >
           <Link
-            href=""
+            href="/collections"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
             COLLECTION
           </Link>
         </li>
 
-        <li className={pathName == "" ? "active border-b-2 border-black" : ""}>
+        <li
+          className={
+            pathName == "/accessories" ? "active border-b-2 border-black" : ""
+          }
+        >
           <Link
-            href=""
+            href="/accessories"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
             ACCESSORIES
@@ -109,9 +113,9 @@ export const NavBar = ({
         </li>
       </div>
       <div className={showSearch ? "block relative" : "hidden"}>
-        <FaSearch className="absolute top-1 left-2" />
+        <FaSearch className="absolute top-2.5 left-2" />
         <input
-          className="pl-8 w-full border border-black placeholder:text-sm"
+          className="pl-8 py-1.5 w-full border border-black placeholder:text-sm"
           placeholder="search here"
           type="text"
         />
