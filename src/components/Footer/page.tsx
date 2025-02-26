@@ -9,7 +9,7 @@ import Tiktok from "../../../public/icons/tiktok.png";
 export const Footer = () => {
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row justify-between px-10 pt-12 pb-5 border-b-2 border-[#6B7280] ">
+      <div className="flex flex-col md:flex-row justify-between px-10 pt-12 pb-5 border-b-2 border-[#6B7280] bg-[#F9FAFB]">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="about">
             <h3 className="pb-2 text-[18px]">
