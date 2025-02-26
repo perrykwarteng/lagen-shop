@@ -1,37 +1,36 @@
-import Image from "next/image";
-import PictureOne from "../../../public/images/picture1.png";
-
-export const ProductCard = () => {
+import Image, { StaticImageData } from "next/image";
+export const ProductCard = ({
+  image,
+  title,
+  color,
+  price,
+  sizes,
+}: {
+  image: StaticImageData;
+  title: string;
+  color: string;
+  price: string;
+  sizes: string[];
+}) => {
   return (
-    <div className=" min-w-[270px] shadow-md">
-      <Image
-        className="w-full h-[350px]"
-        src={PictureOne}
-        alt="Sunset in the mountains"
-      />
+    <div className="min-w-[200px] shadow-md">
+      <Image className="w-full h-[450px]" src={image} alt={title} />
 
       <div className="p-4">
-        <p className="text-gray-700 text-sm">Willow Wrap Sweatshirt</p>
-        <p className="text-gray-700 text-xs">Beige</p>
-        <div className="text-gray-900 font-bold text-sm "> AU$ 57.43</div>
+        <p className="text-gray-700 text-sm">{title}</p>
+        <p className="text-gray-700 text-xs">{color}</p>
+        <div className="text-gray-900 font-bold text-sm">AU$ {price}</div>
       </div>
 
       <div className="p-4">
-        <span className=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          S
-        </span>
-        <span className=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          M
-        </span>
-        <span className=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          L
-        </span>
-        <span className=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          XL
-        </span>
-        <span className=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          XXL
-        </span>
+        {sizes.map((size) => (
+          <span
+            key={size}
+            className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+          >
+            {size}
+          </span>
+        ))}
       </div>
     </div>
   );
