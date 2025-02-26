@@ -5,6 +5,10 @@ import { Footer } from "@/components/Footer/page";
 import { ReactNode, useState } from "react";
 import Image from "next/image";
 import Cancel from "../../../public/icons/close-cross.svg";
+import CartImage from "../../../public/icons/cart-image.svg";
+import CartRemove from "../../../public/icons/cart-remove.svg";
+import CartAdd from "../../../public/icons/cart-add.svg";
+import CartDelete from "../../../public/icons/delete-icon.svg";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,14 +16,21 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
   };
+  const handleShowCart = () => {
+    setShowCart(!showCart);
+  };
+  const handleCloseCart = () => {
+    setShowCart(!showCart);
+  };
 
   return (
     <div>
-      <NavBar showProfile={handleShowProfile} />
+      <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
 
       <main className="relative">{children}</main>
 
@@ -59,32 +70,90 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       )}
 
-      <div className="w-[400px] h-[500px] bg-white list-none border-2 border-black absolute right-0 top-28">
-        <div className="flex items-center justify-between py-2 px-6 mt-2">
-          <div className="text-[25px]">CART SUMMARY</div>
-          <div className="cancel">
-            <Image
-              className="w-8 h-8 cursor-pointer"
-              src={Cancel}
-              alt={"cancel icon"}
-            />
+      {showCart && (
+        <div className="w-[300px] md:w-[400px] py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-28">
+          <div className="flex items-center justify-between py-2 px-7">
+            <div className="text-[25px]">CART SUMMARY</div>
+            <div className="cancel">
+              <Image
+                className="w-8 h-8 cursor-pointer"
+                src={Cancel}
+                alt={"cancel icon"}
+                onClick={handleCloseCart}
+              />
+            </div>
+          </div>
+          <div className="text-center my-2 py-3 border-y border-black">
+            <p>YOU ARE $100 AWAY FROM FREE SHIPPING</p>
+          </div>
+
+          <div className="py-5 px-7 flex items-center gap-3">
+            <div className="image bg-black w-[130px] h-[130px] flex items-center justify-center shadow-lg">
+              <Image
+                className="w-[100px] h-[100px]"
+                src={CartImage}
+                alt="cart Image"
+              />
+            </div>
+            <div className="">
+              <h3 className="font-semibold">ROBE VIOLETTE</h3>
+              <p className="text-[14px]">Size : S</p>
+              <p className="text-[14px]">Colour : Purple</p>
+              <div className="flex items-center gap-1">
+                <div className="">
+                  <Image
+                    className="w-5 h-5 cursor-pointer"
+                    src={CartRemove}
+                    alt="cart Remove"
+                  />
+                </div>
+                <div className="text-[14px]">1</div>
+                <div className="">
+                  <Image
+                    className="w-7 h-7 cursor-pointer"
+                    src={CartAdd}
+                    alt="cart Add"
+                  />
+                </div>
+              </div>
+              <div className="mt-1">
+                <Image
+                  className="w-5 h-5 cursor-pointer"
+                  src={CartDelete}
+                  alt="cart Delete"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 pt-7 px-7 pb-3 text-[14px]">
+            <p>BUY NOW.</p>
+            <p>PAY LATER WITH</p>
+          </div>
+          <div className="border-t-2 border-slate-700 px-7">
+            <div className="flex items-center justify-between text-[14px] py-2">
+              <p>Subtotal:</p>
+              <p>AU$100.23</p>
+            </div>
+            <p className="text-[14px]">
+              *Shipping & Tax calculated at checkout
+            </p>
+            <div className="flex items-center justify-between py-2">
+              <p>Total:</p>
+              <p>AU$100.23</p>
+            </div>
+          </div>
+
+          <div className="px-7">
+            <button
+              type="submit"
+              className="w-full py-3 mt-7 bg-black text-white shadow-lg"
+            >
+              CHECKOPUT SECURELY
+            </button>
           </div>
         </div>
-        <div className="text-center my-2 py-3 border-y border-black">
-          <p>YOU ARE $100 AWAY FROM FREE SHIPPING</p>
-        </div>
-
-        <div className=""></div>
-        <div className="border-t-2 border-slate-700"></div>
-        <div className="px-6">
-          <button
-            type="submit"
-            className="w-full py-3 mt-7 bg-black text-white shadow-lg"
-          >
-            Sign In
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
