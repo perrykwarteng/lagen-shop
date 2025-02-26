@@ -10,8 +10,10 @@ import { MouseEventHandler, useState } from "react";
 
 export const NavBar = ({
   showProfile,
+  showCart,
 }: {
-  showProfile: MouseEventHandler<HTMLImageElement>;
+  showProfile: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
+  showCart: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
 }) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
@@ -40,7 +42,7 @@ export const NavBar = ({
         </div>
         <div className="list two flex items-center gap-3 lg:gap-8">
           <Link
-            href=""
+            href="/wishlist"
             className="text-[12px] lg:text-[14px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
             WISHLIST
@@ -48,6 +50,7 @@ export const NavBar = ({
           <Link
             href=""
             className="text-[12px] lg:text-[14px] font-[500] hover:text-gray-700 cursor-pointer"
+            onClick={showCart}
           >
             CART
           </Link>
@@ -59,7 +62,7 @@ export const NavBar = ({
           />
         </div>
       </div>
-      <div className=" px-5 md:px-10 pt-2 flex items-center justify-between gap-2 md:gap-4 list-none">
+      <div className=" px-5 md:px-10 pt-2 flex items-center justify-between gap-2 md:gap-4 list-none border-b border-black">
         <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
           <Link
             href="/"
@@ -70,11 +73,13 @@ export const NavBar = ({
         </li>
         <li
           className={
-            pathName == "/collections" ? "active border-black border-b-2" : ""
+            pathName == "/collections/stella"
+              ? "active border-black border-b-2"
+              : ""
           }
         >
           <Link
-            href="/collections"
+            href="/collections/stella"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
             COLLECTION
@@ -94,9 +99,13 @@ export const NavBar = ({
           </Link>
         </li>
 
-        <li className={pathName == "" ? "active border-b-2 border-black" : ""}>
+        <li
+          className={
+            pathName == "/rewards" ? "active border-b-2 border-black" : ""
+          }
+        >
           <Link
-            href=""
+            href="/rewards"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
             LA'GEN REWARDS
