@@ -48,12 +48,12 @@ export default function Layout({ children }: LayoutProps) {
             </Link>
           </li>
           <li>
-            <LuLink2
+            <Link
               href="/register"
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               Register
-            </LuLink2>
+            </Link>
           </li>
           <li>
             <Link
