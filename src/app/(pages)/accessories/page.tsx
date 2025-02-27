@@ -1,8 +1,8 @@
+import Layout from "@/components/Layout/layout";
 import { Heading } from "@/components/Heading/Heading";
 import { ProductCard } from "@/components/ProductCard/page";
 import { SortHeader } from "@/components/SortHeader/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
-import Layout from "@/components/Layout/layout";
 import PictureOne from "../../../../public/images/a1.jpg";
 import PictureTwo from "../../../../public/images/a2.jpg";
 import PictureThree from "../../../../public/images/a3.jpg";

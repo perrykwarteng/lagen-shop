@@ -3,7 +3,7 @@ import Layout from "@/components/Layout/layout";
 import LookBookImg from "../../../../public/images/lookbookImg.jpg";
 import ImageThree from "../../../../public/images/camThreeImg.jpg";
 
-export default function LagenRewards() {
+export default function LookBook() {
   return (
     <>
       <Layout>
