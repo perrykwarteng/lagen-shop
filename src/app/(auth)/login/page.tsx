@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import LoginImage from "../../../../public/icons/login-icon.svg";
 import GoogleImage from "../../../../public/icons/google.svg";
 
 export default function Login() {

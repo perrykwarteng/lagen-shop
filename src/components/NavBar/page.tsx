@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProfileIcon from "../../../public/icons/profile-icon.svg";
-import Logo from "../../../public/icons/NavLogo.svg";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler, useState } from "react";
@@ -33,10 +32,8 @@ export const NavBar = ({
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
         </div>
-        {/* <div className="logo md:w-[100px] lg:w-[200px]"> */}
         <div className="logo">
           <Link href="/">
-            {/* <Image className="w-full" src={Logo} alt="Logo" /> */}
             <p className="md:text-[35px] lg:text-[45px]">LAGEN & BUANE</p>
           </Link>
         </div>

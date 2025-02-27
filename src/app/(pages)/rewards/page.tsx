@@ -1,4 +1,3 @@
-import { Heading } from "@/components/Heading/Heading";
 import Image from "next/image";
 import Layout from "@/components/Layout/layout";
 import headerImage from "../../../../public/images/RewardHeader-image.jpg";

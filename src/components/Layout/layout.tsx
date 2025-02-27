@@ -1,5 +1,4 @@
 "use client";
-
 import { NavBar } from "@/components/NavBar/page";
 import { Footer } from "@/components/Footer/page";
 import { ReactNode, useState } from "react";
@@ -9,6 +8,8 @@ import CartImage from "../../../public/icons/cart-image.svg";
 import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
+import Link from "next/link";
+import { LuLink2 } from "react-icons/lu";
 
 interface LayoutProps {
   children: ReactNode;
@@ -39,33 +40,36 @@ export default function Layout({ children }: LayoutProps) {
       {showProfile && (
         <div className="w-[150px] bg-white list-none p-4 border-2 border-black absolute right-0 top-28">
           <li>
-            <a
+            <Link
               href="/login"
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               Login
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <LuLink2
               href="/register"
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               Register
-            </a>
+            </LuLink2>
           </li>
           <li>
-            <a href="/" className="text-[14px] font-[500] hover:text-gray-700">
+            <Link
+              href="/"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
               Account
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/faqs"
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               FAQs
-            </a>
+            </Link>
           </li>
         </div>
       )}
