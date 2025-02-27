@@ -9,7 +9,6 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
-import { LuLink2 } from "react-icons/lu";
 
 interface LayoutProps {
   children: ReactNode;
@@ -32,9 +31,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div>
       <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
-
       <main className="relative">{children}</main>
-
       <Footer />
 
       {showProfile && (
