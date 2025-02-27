@@ -1,4 +1,7 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
+
 export const ProductCard = ({
   image,
   title,
@@ -12,8 +15,10 @@ export const ProductCard = ({
   price: string;
   sizes: string[];
 }) => {
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
   return (
-    <div className="min-w-[200px] shadow-md">
+    <div className="max-w-[350px] shadow-md">
       <Image className="w-full h-[450px]" src={image} alt={title} />
 
       <div className="p-4">
@@ -22,14 +27,19 @@ export const ProductCard = ({
         <div className="text-gray-900 font-bold text-sm">AU$ {price}</div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex flex-wrap gap-2">
         {sizes.map((size) => (
-          <span
+          <button
             key={size}
-            className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            onClick={() => setSelectedSize(size)}
+            className={`rounded-full px-3 py-1 text-sm font-semibold ${
+              selectedSize === size
+                ? "bg-black text-white"
+                : "bg-gray-200 text-gray-700"
+            }`}
           >
             {size}
-          </span>
+          </button>
         ))}
       </div>
     </div>

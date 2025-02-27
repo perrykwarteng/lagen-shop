@@ -3,6 +3,11 @@ import { ProductCard } from "@/components/ProductCard/page";
 import { SortHeader } from "@/components/SortHeader/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
 import PictureOne from "../../../../public/images/picture1.png";
+import PictureTwo from "../../../../public/images/h2.jpg";
+import PictureThree from "../../../../public/images/h3.jpg";
+import PictureFour from "../../../../public/images/a2.jpg";
+import PictureFive from "../../../../public/images/a1.jpg";
+import PictureSix from "../../../../public/images/a3.jpg";
 import Layout from "@/components/Layout/layout";
 
 export default function Wishlist() {
@@ -28,8 +33,8 @@ export default function Wishlist() {
             <SortHeader />
           </div>
 
-          <div className="my-24 px-16 md:px-24 lg:px-36">
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="my-24 px-16 md:px-24 lg:px-36 flex flex-col items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               <ProductCard
                 image={PictureOne}
                 title="Willow Wrap Sweatshirt"
@@ -38,35 +43,35 @@ export default function Wishlist() {
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
+                image={PictureTwo}
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
+                image={PictureThree}
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
+                image={PictureFour}
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
+                image={PictureSix}
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
+                image={PictureFive}
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"

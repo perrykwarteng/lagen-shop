@@ -5,6 +5,9 @@ import { ProductCard } from "@/components/ProductCard/page";
 import { NewsLetterForm } from "@/components/NewsLetterForm/pasge";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
 import PictureOne from "../../public/images/picture1.png";
+import PictureTwo from "../../public/images/h2.jpg";
+import PictureThree from "../../public/images/h3.jpg";
+import PictureFour from "../../public/images/h4.jpg";
 
 export default function Home() {
   return (
@@ -12,35 +15,37 @@ export default function Home() {
       <Hero />
       <div className="px-5 md:px-10 py-5 md:py-10">
         <Heading heading={"Trending"} text="" />
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-          <ProductCard
-            image={PictureOne}
-            title="Willow Wrap Sweatshirt"
-            color="Beige"
-            price="57.43"
-            sizes={["S", "M", "L", "XL", "XXL"]}
-          />
-          <ProductCard
-            image={PictureOne}
-            title="Willow Wrap Sweatshirt"
-            color="Beige"
-            price="57.43"
-            sizes={["S", "M", "L", "XL", "XXL"]}
-          />
-          <ProductCard
-            image={PictureOne}
-            title="Willow Wrap Sweatshirt"
-            color="Beige"
-            price="57.43"
-            sizes={["S", "M", "L", "XL", "XXL"]}
-          />
-          <ProductCard
-            image={PictureOne}
-            title="Willow Wrap Sweatshirt"
-            color="Beige"
-            price="57.43"
-            sizes={["S", "M", "L", "XL", "XXL"]}
-          />
+        <div className="flex flex-col items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+            <ProductCard
+              image={PictureOne}
+              title="Willow Wrap Sweatshirt"
+              color="Beige"
+              price="57.43"
+              sizes={["S", "M", "L", "XL", "XXL"]}
+            />
+            <ProductCard
+              image={PictureTwo}
+              title="Cozy Knit Pullover"
+              color="Beige"
+              price="57.43"
+              sizes={["S", "M", "L", "XL", "XXL"]}
+            />
+            <ProductCard
+              image={PictureThree}
+              title="Essential Zip Hoodie"
+              color="Beige"
+              price="57.43"
+              sizes={["S", "M", "L", "XL", "XXL"]}
+            />
+            <ProductCard
+              image={PictureFour}
+              title="Classic Crewneck Sweater"
+              color="Beige"
+              price="57.43"
+              sizes={["S", "M", "L", "XL", "XXL"]}
+            />
+          </div>
         </div>
       </div>
       <div className="my-4">

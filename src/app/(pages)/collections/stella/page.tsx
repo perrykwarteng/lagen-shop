@@ -3,7 +3,12 @@ import Layout from "@/components/Layout/layout";
 import { ProductCard } from "@/components/ProductCard/page";
 import { SortHeader } from "@/components/SortHeader/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
-import PictureOne from "../../../../../public/images/picture1.png";
+import PictureOne from "../../../../../public/images/c1.jpg";
+import PictureTwo from "../../../../../public/images/c2.jpg";
+import PictureThree from "../../../../../public/images/c3.jpg";
+import PictureFour from "../../../../../public/images/c4.jpg";
+import PictureFive from "../../../../../public/images/h3.jpg";
+import PictureSix from "../../../../../public/images/h4.jpg";
 
 export default function Collections() {
   return (
@@ -28,8 +33,8 @@ export default function Collections() {
             <SortHeader />
           </div>
 
-          <div className="my-24 px-36">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="flex flex-col items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               <ProductCard
                 image={PictureOne}
                 title="Willow Wrap Sweatshirt"
@@ -38,46 +43,40 @@ export default function Collections() {
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
-                title="Willow Wrap Sweatshirt"
-                color="Beige"
-                price="57.43"
-                sizes={["S", "M", "L", "XL", "XXL"]}
+                image={PictureTwo}
+                title="Cozy Knit Pullover"
+                color="Gray"
+                price="49.99"
+                sizes={["S", "M", "L", "XL"]}
               />
               <ProductCard
-                image={PictureOne}
-                title="Willow Wrap Sweatshirt"
-                color="Beige"
-                price="57.43"
-                sizes={["S", "M", "L", "XL", "XXL"]}
+                image={PictureThree}
+                title="Relaxed Fit Hoodie"
+                color="Navy Blue"
+                price="64.99"
+                sizes={["M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureOne}
-                title="Willow Wrap Sweatshirt"
-                color="Beige"
-                price="57.43"
-                sizes={["S", "M", "L", "XL", "XXL"]}
+                image={PictureFour}
+                title="Casual Zip-Up Jacket"
+                color="Black"
+                price="72.50"
+                sizes={["S", "M", "L"]}
               />
               <ProductCard
-                image={PictureOne}
-                title="Willow Wrap Sweatshirt"
-                color="Beige"
-                price="57.43"
-                sizes={["S", "M", "L", "XL", "XXL"]}
+                image={PictureFive}
+                title="Vintage Crewneck Sweater"
+                color="Olive Green"
+                price="59.99"
+                sizes={["XS", "S", "M", "L", "XL"]}
               />
               <ProductCard
-                image={PictureOne}
-                title="Willow Wrap Sweatshirt"
-                color="Beige"
-                price="57.43"
+                image={PictureSix}
+                title="Lightweight Fleece Hoodie"
+                color="Burgundy"
+                price="54.75"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
-            </div>
-
-            <div className="flex items-center justify-center">
-              <button className="mt-10 border-2 border-black bg-white px-20 py-3 ml-3 text-black">
-                LOAD MORE
-              </button>
             </div>
           </div>
 
