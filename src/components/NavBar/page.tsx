@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProfileIcon from "../../../public/icons/profile-icon.svg";
+import MainLogo from "../../../public/icons/main-logo.svg";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler, useState } from "react";
@@ -34,7 +35,11 @@ export const NavBar = ({
         </div>
         <div className="logo">
           <Link href="/">
-            <p className="md:text-[35px] lg:text-[45px]">LAGEN & BUANE</p>
+            <Image
+              src={MainLogo}
+              alt="Main Logo"
+              className="w-[150px] md:w-[250px] lg:w-[450px]"
+            />
           </Link>
         </div>
         <div className="list two flex items-center gap-3 lg:gap-8">
@@ -59,7 +64,7 @@ export const NavBar = ({
           />
         </div>
       </div>
-      <div className=" px-5 md:px-10 pt-2 flex items-center justify-between gap-2 md:gap-4 list-none border-b border-black">
+      <div className=" px-5 md:px-10 py-2 flex items-center justify-between gap-2 md:gap-4 list-none border-b border-black">
         <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
           <Link
             href="/"
