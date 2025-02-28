@@ -5,6 +5,7 @@ import Twitter from "../../../public/icons/twitter.png";
 import Instagram from "../../../public/icons/instagram.png";
 import Pinterest from "../../../public/icons/pinterest.png";
 import Tiktok from "../../../public/icons/tiktok.png";
+import PaymentMode from "../../../public/icons/payment-mode.jpg";
 
 export const Footer = () => {
   return (
@@ -116,11 +117,14 @@ export const Footer = () => {
               </div>
               <div className="text-[12px] mt-2">
                 By clicking the SUBSCRIBE button, you are agreeing to our
-                <Link href="/privacy-policy" className="text-blue-600">
+                <Link href="/privacy-policy" className="text-blue-600 ms-1">
                   Privacy & Cookie Policy.
                 </Link>
               </div>
               <div className="text-[14px] mt-2">WE ACCEPT</div>
+              <div className="w-[350px] mt-6">
+                <Image className="w-full" src={PaymentMode} alt="payment" />
+              </div>
             </div>
           </div>
         </div>
