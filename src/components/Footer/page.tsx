@@ -122,7 +122,7 @@ export const Footer = () => {
                 </Link>
               </div>
               <div className="text-[14px] mt-2">WE ACCEPT</div>
-              <div className="w-[350px] mt-6">
+              <div className="w-[350px] mt-5">
                 <Image className="w-full" src={PaymentMode} alt="payment" />
               </div>
             </div>
