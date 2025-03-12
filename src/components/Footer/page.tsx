@@ -17,7 +17,7 @@ export const Footer = () => {
               <b>ABOUT US</b>
             </h3>
             <div className="flex flex-col gap-2">
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link href="/about" className="text-[14px] text-[#6B7280]">
                 The Brand
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
@@ -42,16 +42,19 @@ export const Footer = () => {
               <Link href="#" className="text-[14px] text-[#6B7280]">
                 FAQ
               </Link>
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link href="/wishlist" className="text-[14px] text-[#6B7280]">
                 Wishlist
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
                 Track your order
               </Link>
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link
+                href="/terms&condition"
+                className="text-[14px] text-[#6B7280]"
+              >
                 Terms and Conditions
               </Link>
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link href="/policy" className="text-[14px] text-[#6B7280]">
                 Privacy Policy
               </Link>
             </div>
@@ -61,7 +64,7 @@ export const Footer = () => {
               <b> SUPPORT </b>
             </h3>
             <div className="flex flex-col gap-2">
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link href="/contact" className="text-[14px] text-[#6B7280]">
                 Contact Us
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
@@ -140,13 +143,16 @@ export const Footer = () => {
           <Link href="#" className="text-[14px] text-[#6B7280] underline">
             Cookies Settings
           </Link>
-          <Link href="#" className="text-[14px] text-[#6B7280] underline">
+          <Link
+            href="terms&condition"
+            className="text-[14px] text-[#6B7280] underline"
+          >
             Terms & Conditions
           </Link>
           <Link href="#" className="text-[14px] text-[#6B7280] underline">
             Site Map
           </Link>
-          <Link href="#" className="text-[14px] text-[#6B7280] underline">
+          <Link href="policy" className="text-[14px] text-[#6B7280] underline">
             Privacy Policy
           </Link>
         </div>
