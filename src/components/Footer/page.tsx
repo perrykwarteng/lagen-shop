@@ -39,7 +39,7 @@ export const Footer = () => {
               <b> INFORMATION </b>
             </div>
             <div className="flex flex-col gap-2">
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link href="faqs" className="text-[14px] text-[#6B7280]">
                 FAQ
               </Link>
               <Link href="/wishlist" className="text-[14px] text-[#6B7280]">
@@ -73,7 +73,10 @@ export const Footer = () => {
               <Link href="#" className="text-[14px] text-[#6B7280]">
                 Shipping & Production
               </Link>
-              <Link href="#" className="text-[14px] text-[#6B7280]">
+              <Link
+                href="return&exchange"
+                className="text-[14px] text-[#6B7280]"
+              >
                 Return & Exchange
               </Link>
             </div>
@@ -136,7 +139,7 @@ export const Footer = () => {
       <div className="px-10 py-6 flex items-center justify-between">
         <div className="">
           <p className="text-[14px] text-[#6B7280]">
-            ©2023 LA’GEN All Rights Reserved
+            ©2025 LA’GEN All Rights Reserved
           </p>
         </div>
         <div className="flex items-center gap-2">
