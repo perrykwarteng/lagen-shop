@@ -56,7 +56,7 @@ export default function Payment() {
                       className="bg-gray-300 border border-gray-300 text-gray-900 text-sm w-full py-3.5 px-2"
                       id="savedLocation"
                     >
-                      <option selected>Choose a Payment</option>
+                      <option selected>Select Payment Methos</option>
                       {paymentMethod.map((value) => (
                         <option key={value}>{value}</option>
                       ))}

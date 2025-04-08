@@ -43,8 +43,8 @@ export default function Checkout() {
                       className="bg-gray-300 border border-gray-300 text-gray-900 text-sm w-full py-3.5 px-2"
                       id="savedLocation"
                     >
-                      <option defaultValue={"Choose a address"}>
-                        Choose a address
+                      <option defaultValue={"Select address"}>
+                        Select address
                       </option>
                       <option value="EL">East Legon</option>
                       <option value="LP">Lapaz</option>
