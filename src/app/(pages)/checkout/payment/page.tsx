@@ -13,7 +13,7 @@ export default function Payment() {
 
   const [payment, setPayment] = useState("");
 
-  const handleSelectPayment = (e: any) => {
+  const handleSelectPayment = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const payment = e.target.value;
     setPayment(payment);
   };
