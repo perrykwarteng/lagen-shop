@@ -44,7 +44,7 @@ export default function Checkout() {
                       id="savedLocation"
                     >
                       <option defaultValue={"Choose a address"}>
-                        Choose a country
+                        Choose a address
                       </option>
                       <option value="EL">East Legon</option>
                       <option value="LP">Lapaz</option>
