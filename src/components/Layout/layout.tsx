@@ -150,7 +150,7 @@ export default function Layout({ children }: LayoutProps) {
               type="submit"
               className="w-full py-3 mt-7 bg-black text-white shadow-lg"
             >
-              CHECKOPUT SECURELY
+              <Link href="/checkout">CHECKOUT SECURELY</Link>
             </button>
           </div>
         </div>
