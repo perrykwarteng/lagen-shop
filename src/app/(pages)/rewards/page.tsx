@@ -9,6 +9,62 @@ import { FaqBlack } from "@/components/FaqBlack/page";
 import { FaqWhite } from "@/components/FaqWhite/page";
 
 export default function LagenRewards() {
+  const memberPoints = [
+    "Every $1 spent = 1 point",
+    "Early Access to New Releases",
+    "10% off first purchase for signing up",
+  ];
+  const pearlPoints = [
+    "Every $1 spent = 1 point",
+    "Free standard shipping",
+    "Early Access to New releases",
+    "Redeemable Rewards",
+    "Birthday Bonus Points",
+  ];
+  const sapphirePoints = [
+    "Every $1 spent = 1 point",
+    "Free Express Shipping ",
+    "Early Access to New Releases ",
+    "Redeemable Rewards and Points",
+    "Birthday Bonus Points",
+    "10% off every order",
+  ];
+  const emeraldPoints = [
+    "Every $1 spent = 1 point",
+    "Free Express Shipping ",
+    "Early Access to New Releases ",
+    "Redeemable Rewards and Points",
+    "Early Access to back in stock styles ",
+    "First access to sales",
+    "Secret Promo Codes ",
+    "Free Gifts",
+    "Invite to exclusive events ",
+    "15% off every purchase ",
+  ];
+  const diamondPoints = [
+    "Every $1 spent = 1 point",
+    "Free Express Shipping ",
+    "Early Access to New Releases ",
+    "Redeemable Rewards and Points",
+    "Early Access to back in stock styles ",
+    "First access to sales",
+    "Access to private VIP sales ",
+    "Secret Promo Codes ",
+    "Early Access to new collection Preview ",
+    "20% off every order ",
+    "Dedicated online stylists ",
+    "Invites to Exclusive Events, workshops, webinars",
+    "Customised promotion and deals",
+    "Birthday packages ",
+    "Free gifts",
+  ];
+  const earningPoints = [
+    "10 points per dollar spent on purchases",
+    "50 points for referrals (new customers)",
+    "20 points for product reviews and ratings",
+    "10 points for social media engagement (follow, share, like)",
+  ];
+
   return (
     <>
       <Layout>
@@ -16,14 +72,16 @@ export default function LagenRewards() {
           <Image className="w-full h-full" src={headerImage} alt="" />
         </div>
         <div className="px-5 md:px-10 pt-5 md:pt-12">
-          <h2 className="text-[23px] font-semibold">BECOME A MEMBER</h2>
+          <h2 className="text-[23px] font-semibold">
+            Welcome to Lagen and Buane's Exclusive Circle
+          </h2>
           <p>
-            Embark on an enhanced shopping journey tailored exclusively for our
-            esteemed La’gen Rewards members. Unlock a wide array of exclusive
-            offers and rewards that progressively elevate as you advance through
-            our tiered program. Take the first step towards your loyalty journey
-            by signing up now and experiencing the exceptional benefits that
-            await you.
+            At LB, we value your loyalty and appreciate your continued support.
+            Our loyalty program is designed not only to elevate your shopping
+            experience but to reward you for your purchases, referrals, and
+            engagement. Join our exclusive circle and enjoy exclusive benefits,
+            personalised perks and unforgettable experiences as you climb
+            through membership tiers.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-5 py-8">
@@ -76,22 +134,15 @@ export default function LagenRewards() {
         </div>
         {/* FAQs One*/}
         <div className="px-5 md:px-10 flex flex-col gap-3">
+          <FaqBlack title="Member (0+ points):" text={memberPoints} />
+          <FaqBlack title="Pearl (1000 points):" text={pearlPoints} />
+          <FaqBlack title="Sapphire (2000 points):" text={sapphirePoints} />
+          <FaqBlack title="Emerald (5000 points ):" text={emeraldPoints} />
           <FaqBlack
-            title="Member"
-            text="MEMBER 0+ points Gain entry to the esteemed La’gen Rewards programme Earn 1 point for every $1 spent, paving your way through loyalty tiers Experience delightful surprises, offers, and gifts throughout the year"
+            title="Diamond ( 10,000 points) Locked "
+            text={diamondPoints}
           />
-          <FaqBlack
-            title="Tier one"
-            text="MEMBER 0+ points Gain entry to the esteemed La’gen Rewards programme Earn 1 point for every $1 spent, paving your way through loyalty tiers Experience delightful surprises, offers, and gifts throughout the year"
-          />
-          <FaqBlack
-            title="Tier Two"
-            text="MEMBER 0+ points Gain entry to the esteemed La’gen Rewards programme Earn 1 point for every $1 spent, paving your way through loyalty tiers Experience delightful surprises, offers, and gifts throughout the year"
-          />
-          <FaqBlack
-            title="Tier three"
-            text="MEMBER 0+ points Gain entry to the esteemed La’gen Rewards programme Earn 1 point for every $1 spent, paving your way through loyalty tiers Experience delightful surprises, offers, and gifts throughout the year"
-          />
+          <FaqBlack title="Earning Points: " text={earningPoints} />
 
           <button className="bg-black w-full md:w-[85%] px-20 py-3 my-5 text-white uppercase">
             Join now
