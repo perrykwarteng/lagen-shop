@@ -2,6 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import LoginImage from "../../../../public/icons/login-icon.svg";
 import GoogleImage from "../../../../public/icons/google.svg";
+import { FaUserPen } from "react-icons/fa6";
+import { FaPaperPlane } from "react-icons/fa6";
+import { FaClipboardList } from "react-icons/fa6";
+import { FaRegCreditCard } from "react-icons/fa6";
+import { FaListCheck } from "react-icons/fa6";
 
 export default function Register() {
   return (
@@ -127,6 +132,46 @@ export default function Register() {
               </Link>
             </div>
           </form>
+          <div className="mt-6">
+            <h3 className="text-[25px] font-medium  mb-5">
+              Creating an account <br /> enables you to:
+            </h3>
+
+            <div className="flex items-center gap-4 my-2.5">
+              <FaUserPen />
+              <p className="text-sm text-[#343434]">
+                Enrol in our loyalty system
+              </p>
+            </div>
+            <div className="flex items-center gap-4 my-2.5">
+              <FaPaperPlane className="text-[25px]" />
+              <p className="text-sm text-[#343434]">
+                Receive the newsletter and obtain access to the latest news,
+                release information and unique discount codes before anyone else
+              </p>
+            </div>
+            <div className="flex items-center gap-4 my-2.5">
+              <FaClipboardList />
+              <p className="text-sm text-[#343434]">
+                Be able to view your full order history and order tracking
+                details.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 my-2.5">
+              <FaRegCreditCard />
+              <p className="text-sm text-[#343434]">
+                Save your payment details, to make checking out quicker and
+                easier.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 my-2.5">
+              <FaListCheck />
+              <p className="text-sm text-[#343434]">
+                Add products to your wishlist for viewing or purchasing at a
+                later date.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
