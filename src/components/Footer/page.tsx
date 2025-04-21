@@ -21,7 +21,7 @@ export const Footer = () => {
                 The Brand
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                La'GenXLakopue
+                Referral
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
                 Blog
@@ -30,7 +30,10 @@ export const Footer = () => {
                 Reviews
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                Rewards Program
+                Loyalty Program
+              </Link>
+              <Link href="#" className="text-[14px] text-[#6B7280]">
+                Gift cards
               </Link>
             </div>
           </div>
@@ -40,13 +43,13 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
               <Link href="faqs" className="text-[14px] text-[#6B7280]">
-                FAQ
+                Help Center
               </Link>
               <Link href="/wishlist" className="text-[14px] text-[#6B7280]">
                 Wishlist
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                Track your order
+                Shipping info
               </Link>
               <Link
                 href="/terms&condition"
@@ -61,23 +64,23 @@ export const Footer = () => {
           </div>
           <div className="">
             <h3 className="pb-2 text-[18px]">
-              <b> SUPPORT </b>
+              <b> Customer support </b>
             </h3>
             <div className="flex flex-col gap-2">
               <Link href="/contact" className="text-[14px] text-[#6B7280]">
                 Contact Us
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                Sizing & Tailoring
+                Sizing Guide
               </Link>
               <Link href="#" className="text-[14px] text-[#6B7280]">
-                Shipping & Production
+                Track package
               </Link>
               <Link
                 href="return&exchange"
                 className="text-[14px] text-[#6B7280]"
               >
-                Return & Exchange
+                Return and Exchange
               </Link>
             </div>
           </div>

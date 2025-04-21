@@ -110,7 +110,7 @@ export const NavBar = ({
             href="/rewards"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
-            LA'GEN REWARDS
+            LB Circle ∞
           </Link>
         </li>
 
