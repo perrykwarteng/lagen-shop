@@ -20,7 +20,7 @@ export default function Accessories() {
               href={"lookbook"}
               className="mt-10 bg-black px-20 py-3 ml-3 text-white"
             >
-              VIEW LOOKBOOK
+              VIEW LB NEXUS
             </Link>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function Accessories() {
               href={"lookbook"}
               className="mt-10 bg-black px-20 py-3 ml-3 text-white"
             >
-              VIEW LOOKBOOK
+              VIEW LB NEXUS
             </Link>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Accessories() {
               href={"lookbook"}
               className="mt-10 bg-black px-20 py-3 ml-3 text-white"
             >
-              VIEW LOOKBOOK
+              VIEW LB NEXUS
             </Link>
           </div>
         </div>
