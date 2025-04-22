@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout/layout";
 import { Hero } from "@/components/Hero/page";
-import { Heading } from "@/components/Heading/Heading";
 import { ProductCard } from "@/components/ProductCard/page";
 import { NewsLetterForm } from "@/components/NewsLetterForm/pasge";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
