@@ -11,9 +11,11 @@ import { MouseEventHandler, useState } from "react";
 export const NavBar = ({
   showProfile,
   showCart,
+  showMenu,
 }: {
   showProfile: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
   showCart: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
+  showMenu: MouseEventHandler<SVGElement>;
 }) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
@@ -28,7 +30,7 @@ export const NavBar = ({
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
-            <FaBars className="cursor-pointer" />
+            <FaBars className="cursor-pointer" onClick={showMenu} />
             <FaSearch className="cursor-pointer" onClick={handelShowSearch} />
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
@@ -110,7 +112,7 @@ export const NavBar = ({
             href="/rewards"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
-            LB Circle ∞
+            LB CIRCLE ∞
           </Link>
         </li>
 
@@ -123,7 +125,7 @@ export const NavBar = ({
             href="/campaigns"
             className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
           >
-            LOOKBOOK
+            LB NEXUS
           </Link>
         </li>
       </div>

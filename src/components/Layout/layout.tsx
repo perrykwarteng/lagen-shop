@@ -17,6 +17,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
@@ -27,10 +28,17 @@ export default function Layout({ children }: LayoutProps) {
   const handleCloseCart = () => {
     setShowCart(!showCart);
   };
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <div>
-      <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
+      <NavBar
+        showProfile={handleShowProfile}
+        showCart={handleShowCart}
+        showMenu={handleShowMenu}
+      />
       <main className="relative">{children}</main>
       <Footer />
 
@@ -66,6 +74,92 @@ export default function Layout({ children }: LayoutProps) {
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               FAQs
+            </Link>
+          </li>
+        </div>
+      )}
+
+      {/* Menu */}
+      {showMenu && (
+        <div className="w-[1500px] md:w-[250px] py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-24 top-16">
+          <li>
+            <Link
+              href="/"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Collection
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Unisex
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Kids Clothing
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Coming Soon
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Accessories
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[700] hover:text-gray-700"
+            >
+              THE UNKNOWN
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              LB Circle ∞
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              LB Nexus
             </Link>
           </li>
         </div>

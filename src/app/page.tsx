@@ -14,8 +14,7 @@ export default function Home() {
     <Layout>
       <Hero />
       <div className="px-5 md:px-10 py-5 md:py-10">
-        <Heading heading={"Trending"} text="" />
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
             <ProductCard
               image={PictureOne}
