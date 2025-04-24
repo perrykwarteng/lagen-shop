@@ -41,7 +41,7 @@ export const NavBar = ({
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
-            <FaBars className="cursor-pointer" onClick={showMenu} />
+            <FaBars className="cursor-pointer md:hidden" onClick={showMenu} />
             <FaSearch className="cursor-pointer" onClick={handelShowSearch} />
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
@@ -76,6 +76,98 @@ export const NavBar = ({
             className="cursor-pointer w-[20px] md:w-[35px]"
           />
         </div>
+      </div>
+      <div className="hidden px-5 md:px-10 py-5 list-none md:flex items-center justify-between gap-3 border-b border-black">
+        <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
+          <Link
+            href="/"
+            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
+          >
+            HOME
+          </Link>
+        </li>
+        <li>
+          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
+            Shop
+          </Link>
+        </li>
+        <li
+          className={
+            pathName == "/collections/stella"
+              ? "active border-black border-b-2"
+              : ""
+          }
+        >
+          <Link
+            href="/collections/stella"
+            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
+          >
+            COLLECTION
+          </Link>
+        </li>
+
+        <li
+          className={
+            pathName == "/accessories" ? "active border-b-2 border-black" : ""
+          }
+        >
+          <Link
+            href="/accessories"
+            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
+          >
+            ACCESSORIES
+          </Link>
+        </li>
+
+        <li
+          className={
+            pathName == "/rewards" ? "active border-b-2 border-black" : ""
+          }
+        >
+          <Link
+            href="/rewards"
+            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
+          >
+            LB CIRCLE ∞
+          </Link>
+        </li>
+
+        <li
+          className={
+            pathName == "/campaigns" ? "active border-b-2 border-black" : ""
+          }
+        >
+          <Link
+            href="/campaigns"
+            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
+          >
+            LB NEXUS
+          </Link>
+        </li>
+
+        <li>
+          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
+            Kids Clothing
+          </Link>
+        </li>
+
+        <li>
+          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
+            Unisex
+          </Link>
+        </li>
+
+        <li>
+          <Link href="#" className="text-[14px] font-[700] hover:text-gray-700">
+            THE UNKNOWN
+          </Link>
+        </li>
+
+        <li>
+          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
+            Coming Soon
+          </Link>
+        </li>
       </div>
       <div className={showSearch ? "block relative" : "hidden"}>
         <FaSearch className="absolute top-2.5 left-2" />

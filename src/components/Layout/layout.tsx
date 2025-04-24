@@ -34,7 +34,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <NavBar
         showProfile={handleShowProfile}
         showCart={handleShowCart}
@@ -82,7 +82,7 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Menu */}
       {showMenu && (
-        <div className="w-[1500px] md:w-[250px] py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-24 top-24">
+        <div className="w-full py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-0 top-20">
           <MenuList />
         </div>
       )}
