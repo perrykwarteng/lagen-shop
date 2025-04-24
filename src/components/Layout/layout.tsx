@@ -9,6 +9,7 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
+import { MenuList } from "../MenuList/page";
 
 interface LayoutProps {
   children: ReactNode;
@@ -81,87 +82,8 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Menu */}
       {showMenu && (
-        <div className="w-[1500px] md:w-[250px] py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-24 top-16">
-          <li>
-            <Link
-              href="/"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Collection
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Unisex
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Kids Clothing
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Coming Soon
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Accessories
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[700] hover:text-gray-700"
-            >
-              THE UNKNOWN
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              LB Circle ∞
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              LB Nexus
-            </Link>
-          </li>
+        <div className="w-[1500px] md:w-[250px] py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-24 top-24">
+          <MenuList />
         </div>
       )}
 
