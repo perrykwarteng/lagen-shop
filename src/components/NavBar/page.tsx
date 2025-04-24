@@ -26,6 +26,17 @@ export const NavBar = ({
 
   return (
     <div className="">
+      <div
+        className={
+          pathName == "/campaigns"
+            ? "block bg-slate-800 py-1 w-full overflow-hidden whitespace-nowrap"
+            : "hidden"
+        }
+      >
+        <p className="animate-scroll-left animate-scroll-left text-white text-xs">
+          Your Access to the inner world of LA’GEN and BUANE.
+        </p>
+      </div>
       <div className="nav1 flex items-center justify-between px-5 md:px-10 py-5 border-b border-black">
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
@@ -65,69 +76,6 @@ export const NavBar = ({
             className="cursor-pointer w-[20px] md:w-[35px]"
           />
         </div>
-      </div>
-      <div className=" px-5 md:px-10 py-2 flex items-center justify-between gap-2 md:gap-4 list-none border-b border-black">
-        <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
-          <Link
-            href="/"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            HOME
-          </Link>
-        </li>
-        <li
-          className={
-            pathName == "/collections/stella"
-              ? "active border-black border-b-2"
-              : ""
-          }
-        >
-          <Link
-            href="/collections/stella"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            COLLECTION
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/accessories" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/accessories"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            ACCESSORIES
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/rewards" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/rewards"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            LB CIRCLE ∞
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/campaigns" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/campaigns"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            LB NEXUS
-          </Link>
-        </li>
       </div>
       <div className={showSearch ? "block relative" : "hidden"}>
         <FaSearch className="absolute top-2.5 left-2" />
