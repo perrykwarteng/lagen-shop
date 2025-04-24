@@ -2,9 +2,17 @@
 
 import Image from "next/image";
 import DownSolid from "../../../public/icons/down-solid.svg";
+import { FaUnlockKeyhole } from "react-icons/fa6";
+
 import { useState } from "react";
 
-export const FaqBlack = ({ title, text }: { title: string; text: string[] }) => {
+export const FaqBlack = ({
+  title,
+  text,
+}: {
+  title: string;
+  text: string[];
+}) => {
   const [viewDetails, setViewDetails] = useState(false);
 
   const handleViewDetail = () => {
@@ -14,8 +22,16 @@ export const FaqBlack = ({ title, text }: { title: string; text: string[] }) => 
   return (
     <div className="bg-black text-white rounded-lg w-full md:w-[85%] py-6 px-6">
       <div className="flex items-center justify-between">
-        <div className="">
+        <div className="flex items-center gap-2">
           <h3 className="text-[20px] font-bold">{title}</h3>
+          <div
+            className={
+              title === "Diamond ( 10,000 points)" ? "block" : "hidden"
+            }
+          >
+            <FaUnlockKeyhole />
+          </div>
+          {/* Emerald (5000 points ): */}
         </div>
         <div className="cursor-pointer">
           <Image

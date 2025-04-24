@@ -51,7 +51,7 @@ export default function LagenRewards() {
     "Access to private VIP sales ",
     "Secret Promo Codes ",
     "Early Access to new collection Preview ",
-    "20% off every order ",
+    "20% off every order",
     "Dedicated online stylists ",
     "Invites to Exclusive Events, workshops, webinars",
     "Customised promotion and deals",
@@ -134,15 +134,12 @@ export default function LagenRewards() {
         </div>
         {/* FAQs One*/}
         <div className="px-5 md:px-10 flex flex-col gap-3">
-          <FaqBlack title="Member (0+ points):" text={memberPoints} />
-          <FaqBlack title="Pearl (1000 points):" text={pearlPoints} />
-          <FaqBlack title="Sapphire (2000 points):" text={sapphirePoints} />
-          <FaqBlack title="Emerald (5000 points ):" text={emeraldPoints} />
-          <FaqBlack
-            title="Diamond ( 10,000 points) Locked "
-            text={diamondPoints}
-          />
-          <FaqBlack title="Earning Points: " text={earningPoints} />
+          <FaqBlack title="Member (0+ points)" text={memberPoints} />
+          <FaqBlack title="Pearl (1000 points)" text={pearlPoints} />
+          <FaqBlack title="Sapphire (2000 points)" text={sapphirePoints} />
+          <FaqBlack title="Emerald (5000 points )" text={emeraldPoints} />
+          <FaqBlack title="Diamond ( 10,000 points)" text={diamondPoints} />
+          <FaqBlack title="Earning Points" text={earningPoints} />
 
           <button className="bg-black w-full md:w-[85%] px-20 py-3 my-5 text-white uppercase">
             Join now

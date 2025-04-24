@@ -1,14 +1,12 @@
 export const SubscriptionBanner = () => {
   return (
-    <div className="py-8 px-10 grid place-content-centeritems-center bg-gray-500 text-white">
+    <div className="py-2 px-10 grid bg-gray-500">
       <div className="flex items-center justify-between">
-        <div>
-          <p className="text-[15px] font-light">
-            SUBSCRIBE TO OUR NEWSLETTER FOR UPDATES AND SPECIAL OFFERS{" "}
+        <div className="w-full overflow-hidden whitespace-nowrap">
+          <p className="text-[15px] text-white  font-light animate-scroll-left">
+            SUBSCRIBE TO OUR NEWSLETTER FOR UPDATES AND SPECIAL OFFERS. SHIPPING
+            WORLDWIDE
           </p>
-        </div>
-        <div>
-          <p className="text-[15px] font-light">SHIPPING WORLDWIDE</p>{" "}
         </div>
       </div>
     </div>
