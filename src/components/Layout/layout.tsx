@@ -35,16 +35,12 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="overflow-hidden">
-      <NavBar
-        showProfile={handleShowProfile}
-        showCart={handleShowCart}
-        showMenuClick={handleShowMenu}
-      />
+      <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
       <main className="relative">{children}</main>
       <Footer />
 
       {showProfile && (
-        <div className="w-[150px] bg-white list-none p-4 border-2 border-black absolute right-0 top-28">
+        <div className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-0 top-16">
           <li>
             <Link
               href="/login"
@@ -82,13 +78,13 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Menu */}
       {showMenu && (
-        <div className="w-full py-4 px-5 pb-7 md:hidden bg-white list-none border-2 border-black absolute left-0 top-16">
+        <div className="w-full py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-0 top-20">
           <MenuList />
         </div>
       )}
 
       {showCart && (
-        <div className="w-[300px] md:w-[400px] py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-28">
+        <div className="w-[300px] md:w-[400px] z-50 py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-28">
           <div className="flex items-center justify-between py-2 px-7">
             <div className="text-[25px]">CART SUMMARY</div>
             <div className="cancel">

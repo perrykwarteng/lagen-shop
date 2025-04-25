@@ -1,8 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import MensClothing from "../../../public/icons/mensClothing.png";
+import WomensClothing from "../../../public/icons/womenClothing.png";
+import KidsClothing from "../../../public/icons/kidsClothing.png";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 
 export const MenuList = () => {
   const pathName = usePathname();
+  const [shopNav, setShopNav] = useState(false);
+
+  const handleShopMenu = () => {
+    setShopNav((prev) => !prev);
+  };
 
   return (
     <>
@@ -15,10 +26,11 @@ export const MenuList = () => {
             HOME
           </Link>
         </li>
-        <li>
+        <li onClick={handleShopMenu} className="flex items-center gap-1.5">
           <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
             Shop
           </Link>
+          {shopNav ? <FaCaretUp /> : <FaCaretDown />}
         </li>
         <li
           className={
@@ -98,6 +110,38 @@ export const MenuList = () => {
           </Link>
         </li>
       </div>
+
+      {shopNav && (
+        <div className="list-none w-[200px] bg-white shadow-md p-2 absolute left-20 md:left-28 top-16">
+          <li className="flex items-center my-1.5 gap-1.5">
+            <Image className="w-5" src={MensClothing} alt="mens clothing" />
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Mens Clothing
+            </Link>
+          </li>
+          <li className="flex items-center my-1.5 gap-1.5">
+            <Image className="w-5" src={WomensClothing} alt="womens clothing" />
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Womens Clothing
+            </Link>
+          </li>
+          <li className="flex items-center my-1.5 gap-1.5">
+            <Image className="w-5" src={KidsClothing} alt="kids clothing" />
+            <Link
+              href="#"
+              className="text-[14px] font-[500] hover:text-gray-700"
+            >
+              Kids Clothing
+            </Link>
+          </li>
+        </div>
+      )}
     </>
   );
 };
