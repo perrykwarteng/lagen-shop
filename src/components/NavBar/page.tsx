@@ -9,13 +9,16 @@ import { FaBars } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { MenuList } from "../MenuList/page";
+import { NextMenu } from "../NextMenu/page";
 
 export const NavBar = ({
   showProfile,
   showCart,
+  showMenuClick,
 }: {
   showProfile: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
   showCart: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
+  showMenuClick: MouseEventHandler<SVGElement>;
 }) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
@@ -64,7 +67,14 @@ export const NavBar = ({
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
-            <FaBars className="cursor-pointer" onClick={handleShowMenu} />
+            <FaBars
+              className="cursor-pointer hidden md:block"
+              onClick={handleShowMenu}
+            />
+            <FaBars
+              className="cursor-pointer block md:hidden"
+              onClick={showMenuClick}
+            />
             <FaSearch className="cursor-pointer" onClick={handelShowSearch} />
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
@@ -100,14 +110,8 @@ export const NavBar = ({
           />
         </div>
       </div>
-      <div
-        className={
-          showMenu
-            ? "px-5 md:px-10 py-5 gap-3 shadow-md md:shadow-none md:border-b border-black w-full bg-white absolute z-40 md:relative"
-            : "hidden"
-        }
-      >
-        <MenuList />
+      <div className="px-5 md:px-10 py-5 gap-3 hidden md:block shadow-md md:shadow-none md:border-b border-black w-full bg-white absolute z-40 md:relative">
+        {showMenu ? <MenuList /> : <NextMenu />}
       </div>
       <div className={showSearch ? "block relative" : "hidden"}>
         <FaSearch className="absolute top-2.5 left-2" />
