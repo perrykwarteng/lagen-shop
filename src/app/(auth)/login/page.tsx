@@ -1,15 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import GoogleImage from "../../../../public/icons/google.svg";
-import LoginImage from "../../../../public/icons/login-icon.svg";
 
 export default function Login() {
   return (
     <section className="py-10 h-full">
       <div className=" flex flex-col items-center justify-center">
         <div className="w-[650px] border-b-2 border-black flex flex-col items-center justify-center">
-          <Image className="w-[200px]" src={LoginImage} alt="login image" />
-
           <div className="w-full mt-4 px-32 pb-4 flex items-center justify-between list-none">
             <li className="text-[18px] text-[#4A4844]  hover:text-gray-700 cursor-pointer">
               <Link href="/login">LOGIN</Link>
