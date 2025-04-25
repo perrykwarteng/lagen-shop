@@ -26,7 +26,10 @@ export const MenuList = () => {
             HOME
           </Link>
         </li>
-        <li onClick={handleShopMenu} className="flex items-center gap-1.5">
+        <li
+          onClick={handleShopMenu}
+          className="flex items-center gap-1.5 cursor-pointer"
+        >
           <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
             Shop
           </Link>
