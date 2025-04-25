@@ -29,7 +29,7 @@ export const NavBar = ({
       if (desktop) {
         setShowMenu(true);
       } else {
-        setShowMenu(false);
+        setShowMenu(isDesktop);
       }
     };
 
