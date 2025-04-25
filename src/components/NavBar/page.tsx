@@ -40,9 +40,7 @@ export const NavBar = ({
   }, []);
 
   const handleShowMenu = () => {
-    if (!isDesktop) {
-      setShowMenu((prev) => !prev);
-    }
+    setShowMenu((prev) => !prev);
   };
 
   const handelShowSearch = () => {
