@@ -9,7 +9,6 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
-import { MenuList } from "../MenuList/page";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,7 +17,6 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
