@@ -29,9 +29,6 @@ export default function Layout({ children }: LayoutProps) {
   const handleCloseCart = () => {
     setShowCart(!showCart);
   };
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
 
   return (
     <div className="overflow-hidden">
@@ -73,13 +70,6 @@ export default function Layout({ children }: LayoutProps) {
               FAQs
             </Link>
           </li>
-        </div>
-      )}
-
-      {/* Menu */}
-      {showMenu && (
-        <div className="w-full py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-0 top-20">
-          <MenuList />
         </div>
       )}
 
