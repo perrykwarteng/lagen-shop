@@ -6,7 +6,7 @@ export const MenuList = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col md:flex-row md:justify-between list-none gap-3">
         <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
           <Link
             href="/"

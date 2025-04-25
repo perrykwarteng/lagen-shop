@@ -9,7 +9,6 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
-import { MenuList } from "../MenuList/page";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,7 +17,6 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
@@ -29,17 +27,10 @@ export default function Layout({ children }: LayoutProps) {
   const handleCloseCart = () => {
     setShowCart(!showCart);
   };
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
 
   return (
     <div className="overflow-hidden">
-      <NavBar
-        showProfile={handleShowProfile}
-        showCart={handleShowCart}
-        showMenu={handleShowMenu}
-      />
+      <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
       <main className="relative">{children}</main>
       <Footer />
 
@@ -77,13 +68,6 @@ export default function Layout({ children }: LayoutProps) {
               FAQs
             </Link>
           </li>
-        </div>
-      )}
-
-      {/* Menu */}
-      {showMenu && (
-        <div className="w-full py-4 px-5 pb-7 bg-white list-none border-2 border-black absolute left-0 top-20">
-          <MenuList />
         </div>
       )}
 

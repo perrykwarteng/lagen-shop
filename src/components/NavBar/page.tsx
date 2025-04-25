@@ -4,21 +4,46 @@ import Image from "next/image";
 import Link from "next/link";
 import ProfileIcon from "../../../public/icons/profile-icon.svg";
 import MainLogo from "../../../public/icons/main-logo.svg";
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { MenuList } from "../MenuList/page";
 
 export const NavBar = ({
   showProfile,
   showCart,
-  showMenu,
 }: {
   showProfile: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
   showCart: MouseEventHandler<HTMLImageElement | HTMLAnchorElement>;
-  showMenu: MouseEventHandler<SVGElement>;
 }) => {
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const desktop = window.innerWidth >= 768;
+      setIsDesktop(desktop);
+      if (desktop) {
+        setShowMenu(true);
+      } else {
+        setShowMenu(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleShowMenu = () => {
+    if (!isDesktop) {
+      setShowMenu((prev) => !prev);
+    }
+  };
 
   const handelShowSearch = () => {
     setShowSearch(!showSearch);
@@ -41,7 +66,7 @@ export const NavBar = ({
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
-            <FaBars className="cursor-pointer md:hidden" onClick={showMenu} />
+            <FaBars className="cursor-pointer" onClick={handleShowMenu} />
             <FaSearch className="cursor-pointer" onClick={handelShowSearch} />
           </div>
           <p className="lg:text-[14px] font-[500]">100pts</p>
@@ -77,97 +102,14 @@ export const NavBar = ({
           />
         </div>
       </div>
-      <div className="hidden px-5 md:px-10 py-5 list-none md:flex items-center justify-between gap-3 border-b border-black">
-        <li className={pathName == "/" ? "active border-b-2 border-black" : ""}>
-          <Link
-            href="/"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            HOME
-          </Link>
-        </li>
-        <li>
-          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-            Shop
-          </Link>
-        </li>
-        <li
-          className={
-            pathName == "/collections/stella"
-              ? "active border-black border-b-2"
-              : ""
-          }
-        >
-          <Link
-            href="/collections/stella"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            COLLECTION
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/accessories" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/accessories"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            ACCESSORIES
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/rewards" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/rewards"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            LB CIRCLE ∞
-          </Link>
-        </li>
-
-        <li
-          className={
-            pathName == "/campaigns" ? "active border-b-2 border-black" : ""
-          }
-        >
-          <Link
-            href="/campaigns"
-            className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
-          >
-            LB NEXUS
-          </Link>
-        </li>
-
-        <li>
-          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-            Kids Clothing
-          </Link>
-        </li>
-
-        <li>
-          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-            Unisex
-          </Link>
-        </li>
-
-        <li>
-          <Link href="#" className="text-[14px] font-[700] hover:text-gray-700">
-            THE UNKNOWN
-          </Link>
-        </li>
-
-        <li>
-          <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-            Coming Soon
-          </Link>
-        </li>
+      <div
+        className={
+          showMenu
+            ? "px-5 md:px-10 py-5 gap-3 shadow-md md:shadow-none md:border-b border-black w-full bg-white absolute z-40 md:relative"
+            : "hidden"
+        }
+      >
+        <MenuList />
       </div>
       <div className={showSearch ? "block relative" : "hidden"}>
         <FaSearch className="absolute top-2.5 left-2" />
