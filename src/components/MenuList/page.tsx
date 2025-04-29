@@ -14,6 +14,9 @@ export const MenuList = () => {
   const handleShopMenu = () => {
     setShopNav((prev) => !prev);
   };
+  const handleShopMenuClose = () => {
+    setShopNav((prev) => !prev);
+  };
 
   return (
     <>
@@ -27,7 +30,7 @@ export const MenuList = () => {
           </Link>
         </li>
         <li
-          onClick={handleShopMenu}
+          onMouseEnter={handleShopMenu}
           className="flex items-center gap-1.5 cursor-pointer"
         >
           <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
@@ -115,34 +118,259 @@ export const MenuList = () => {
       </div>
 
       {shopNav && (
-        <div className="list-none w-[200px] bg-white shadow-md p-2 absolute left-20 md:left-28 top-16">
-          <li className="flex items-center my-1.5 gap-1.5">
-            <Image className="w-5" src={MensClothing} alt="mens clothing" />
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Mens Clothing
-            </Link>
-          </li>
-          <li className="flex items-center my-1.5 gap-1.5">
-            <Image className="w-5" src={WomensClothing} alt="womens clothing" />
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Womens Clothing
-            </Link>
-          </li>
-          <li className="flex items-center my-1.5 gap-1.5">
-            <Image className="w-5" src={KidsClothing} alt="kids clothing" />
-            <Link
-              href="#"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Kids Clothing
-            </Link>
-          </li>
+        <div
+          onMouseLeave={handleShopMenuClose}
+          className="px-5 md:px-10 flex flex-col md:flex-row items-start justify-around gap-10 list-none w-full bg-white shadow-md p-2 absolute left-0 right-0 top-14 transition-all duration-300 ease-out"
+        >
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-1.5">
+              <Image
+                className="w-5"
+                src={WomensClothing}
+                alt="womens clothing"
+              />
+              <h4>Women Clothing</h4>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-start gap-5">
+              <div className="">
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    All Women’s
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Dresses
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Tops
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Bottoms
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Jumpsuits & Playsuits
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Co-Ords & Sets
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Bodysuits
+                  </Link>
+                </li>
+              </div>
+              <div className="">
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Skirts
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Jackets
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Hoodies & Jumpers
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Swimwear
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Lingerie & Sleepwear
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Underwear
+                  </Link>
+                </li>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-1.5">
+              <Image className="w-5" src={MensClothing} alt="mens clothing" />
+              <h4>Men Clothing</h4>
+            </div>
+            <div className="flex flex-col md:flex-row items-start gap-5">
+              <div className="">
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    All Mens
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Jackets
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Tops
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Bottoms
+                  </Link>
+                </li>
+
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Co-Ords & Sets
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Hoodies & Jumpsuits
+                  </Link>
+                </li>
+              </div>
+              <div className="">
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Boxers & Briefs
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    Swimwear
+                  </Link>
+                </li>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-1.5">
+              <Image className="w-5" src={KidsClothing} alt="kids clothing" />
+              <h4>Kids Clothing</h4>
+            </div>
+            <div className="flex flex-col md:flex-row items-start gap-5">
+              <div className="">
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    All Kids{" "}
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    3 - 5 years
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    5 - 7 years
+                  </Link>
+                </li>
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    7- 10 years
+                  </Link>
+                </li>
+
+                <li className="my-1.5">
+                  <Link
+                    href="#"
+                    className="text-[14px] font-[500] hover:text-gray-700"
+                  >
+                    10- 13 years
+                  </Link>
+                </li>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>
