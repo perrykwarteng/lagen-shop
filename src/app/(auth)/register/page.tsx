@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import LoginImage from "../../../../public/icons/login-icon.svg";
+import MainLogo from "../../../../public/icons/main-logo.svg";
 import GoogleImage from "../../../../public/icons/google.svg";
 import { FaUserPen } from "react-icons/fa6";
 import { FaPaperPlane } from "react-icons/fa6";
@@ -10,11 +10,17 @@ import { FaListCheck } from "react-icons/fa6";
 
 export default function Register() {
   return (
-    <section className="py-10 h-full">
+    <section className="px-10 py-10 min-h-screen overflow-hidden">
       <div className=" flex flex-col items-center justify-center">
-        <div className="w-[650px] border-b-2 border-black flex flex-col items-center justify-center">
-          <Image className="w-[200px]" src={LoginImage} alt="login image" />
-          <div className="w-full mt-4 px-32 pb-4 flex items-center justify-between list-none">
+        <Link href="/">
+          <Image
+            src={MainLogo}
+            alt="Main Logo"
+            className="w-[250px] md:w-[250px] lg:w-[300px] mb-7 md:mb-10"
+          />
+        </Link>
+        <div className="w-full md:w-[650px] border-b-2 border-black">
+          <div className="w-full mt-4 px-10 md:px-32 pb-4 flex items-center justify-between list-none">
             <li className="text-[18px] text-[#4A4844]  hover:text-gray-700 cursor-pointer">
               <Link href="/login">LOGIN</Link>
             </li>
@@ -23,22 +29,21 @@ export default function Register() {
             </li>
           </div>
         </div>
-
-        <div className="my-10 flex justify-center items-center text-[#4A4844] rounded-md shadow-lg gap-3 min-w-[400px] cursor-pointer">
+        <div className="my-10 flex justify-center items-center text-[#4A4844] rounded-md shadow-lg gap-3 w-full md:w-[400px] cursor-pointer">
           <Image src={GoogleImage} alt=""></Image>
           <p>Sign Up with google</p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="w-[500px] flex items-center gap-2">
+        <div className="w-full md:w-[500px] flex items-center gap-2">
           <div className="w-full h-0.5 bg-[#E6E6E6]"></div>
           <div className="text-[#C4C4C4]">or</div>
           <div className="w-full h-0.5 bg-[#E6E6E6]"></div>
         </div>
         <p className="mt-4 text-[#949494]">
-          Enter your credentials to access an account{" "}
+          Enter your credentials to register an account
         </p>
-        <div className="w-[500px] flex flex-col items-center justify-center">
+        <div className="w-full md:w-[500px] flex flex-col items-center justify-center">
           <form className="w-full">
             <div className="flex items-center gap-2">
               <div className="my-3">
