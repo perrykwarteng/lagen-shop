@@ -5,7 +5,6 @@ import { useState } from "react";
 import MensClothing from "../../../public/icons/mensClothing.png";
 import WomensClothing from "../../../public/icons/womenClothing.png";
 import KidsClothing from "../../../public/icons/kidsClothing.png";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 
 export const MenuList = () => {
   const pathName = usePathname();
@@ -36,7 +35,6 @@ export const MenuList = () => {
           <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
             Shop
           </Link>
-          {shopNav ? <FaCaretUp /> : <FaCaretDown />}
         </li>
         <li
           className={
@@ -123,7 +121,7 @@ export const MenuList = () => {
           className="px-5 md:px-10 flex flex-col md:flex-row items-start justify-around gap-10 list-none w-full bg-white shadow-md p-2 absolute left-0 right-0 top-14 transition-all duration-300 ease-out"
         >
           <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-center gap-1.5">
               <Image
                 className="w-5"
                 src={WomensClothing}
@@ -244,7 +242,7 @@ export const MenuList = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-center gap-1.5">
               <Image className="w-5" src={MensClothing} alt="mens clothing" />
               <h4>Men Clothing</h4>
             </div>
@@ -321,7 +319,7 @@ export const MenuList = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-center gap-1.5">
               <Image className="w-5" src={KidsClothing} alt="kids clothing" />
               <h4>Kids Clothing</h4>
             </div>

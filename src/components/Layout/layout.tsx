@@ -54,7 +54,7 @@ export default function Layout({ children }: LayoutProps) {
           </li>
           <li>
             <Link
-              href="/"
+              href="/accounts"
               className="text-[14px] font-[500] hover:text-gray-700"
             >
               Account
