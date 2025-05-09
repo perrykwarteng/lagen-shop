@@ -17,13 +17,13 @@ export const MenuList = () => {
     setShopNav((prev) => !prev);
   };
   const handleWomenNav = () => {
-    setWomenNav((prev) => !prev);
+    setWomenNav(true);
   };
   const handleMenNav = () => {
-    setMenNav((prev) => !prev);
+    setMenNav(true);
   };
   const handleKidsNav = () => {
-    setKidsNav((prev) => !prev);
+    setKidsNav(true);
   };
   const handleClose = () => {
     setKidsNav(false);
