@@ -109,6 +109,7 @@ export const NavBar = ({
       >
         <MenuList />
       </div>
+
       <div className={showSearch ? "block relative" : "hidden"}>
         <FaSearch className="absolute top-2.5 left-2" />
         <input
