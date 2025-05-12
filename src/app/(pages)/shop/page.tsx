@@ -188,9 +188,7 @@ export default function Shop() {
           <h2 className="text-[20px] md:text-[28px] text-[#333334]">SHOP</h2>
         </div>
 
-        <div className="px-5 md:px-10 py-3 md:py-10">
-            
-        </div>
+        <div className="px-5 md:px-10 py-3 md:py-10"></div>
       </Layout>
     </>
   );
