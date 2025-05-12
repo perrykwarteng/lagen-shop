@@ -15,7 +15,13 @@ export const MenuList = () => {
             HOME
           </Link>
         </li>
-        <li className="flex items-center gap-1.5 cursor-pointer">
+        <li
+          className={
+            pathName == "/shop"
+              ? 'flex items-center gap-1.5 cursor-pointer active border-b-2 border-black"'
+              : ""
+          }
+        >
           <Link
             href="/shop"
             className="text-[14px] font-[500] hover:text-gray-700"
