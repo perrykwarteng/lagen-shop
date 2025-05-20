@@ -20,10 +20,8 @@ export default function Accessories() {
               <div className="py-3">
                 <Heading
                   heading="ACCESSORIES"
-                  text="Lorem ipsum dolor sit amet consectetur. Mattis hendrerit vel
-                  mattis justo metus arcu sagittis duis. Nulla eu posuere
-                  pellentesque tortor fermentum elementum dignissim. At in egestas
-                  tempor donec. Nisl venenatis vitae amet sapien."
+                  heading2="Elevated Essentials. Defined Identity."
+                  text="The LA’GEN & BUANE accessories line brings together function and finesse where sharp design meets everyday versatility. From sculpted headwear and detailed embroidery to refined jewellery, and signature socks etc. each piece is a finishing touch crafted to amplify your presence. Designed to move with intention, speak with style, and elevate your wardrobe from subtle to striking. It’s the details that set you apart."
                 />
               </div>
             </div>
