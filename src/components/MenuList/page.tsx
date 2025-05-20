@@ -17,9 +17,7 @@ export const MenuList = () => {
         </li>
         <li
           className={
-            pathName == "/shop"
-              ? 'flex items-center gap-1.5 cursor-pointer active border-b-2 border-black"'
-              : ""
+            pathName == "/shop" ? "active border-black border-b-2" : ""
           }
         >
           <Link
