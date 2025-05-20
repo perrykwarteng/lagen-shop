@@ -8,6 +8,13 @@ import { useState } from "react";
 import MensClothing from "../../../../public/icons/mensClothing.png";
 import WomensClothing from "../../../../public/icons/womenClothing.png";
 import KidsClothing from "../../../../public/icons/kidsClothing.png";
+import { ProductCard } from "@/components/ProductCard/page";
+import PictureOne from "../../../../public/images/a1.jpg";
+import PictureFive from "../../../../public/images/a5.jpg";
+import PictureSix from "../../../../public/images/a6.jpg";
+import PictureTwo from "../../../../public/images/c2.jpg";
+import PictureThree from "../../../../public/images/c3.jpg";
+import PictureFour from "../../../../public/images/c4.jpg";
 
 export default function Shop() {
   const [womenNav, setWomenNav] = useState(false);
@@ -188,7 +195,60 @@ export default function Shop() {
           <h2 className="text-[20px] md:text-[28px] text-[#333334]">SHOP</h2>
         </div>
 
-        <div className="px-5 md:px-10 py-3 md:py-10"></div>
+        <div className="my-24 px-16 md:px-24 lg:px-36">
+          <div className="flex flex-col items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+              <ProductCard
+                image={PictureOne}
+                title="Elegant Wrap Cardigan"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+              <ProductCard
+                image={PictureTwo}
+                title="Soft Touch Sweatshirt"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+              <ProductCard
+                image={PictureThree}
+                title="Urban Zip-Up Hoodie"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+              <ProductCard
+                image={PictureFour}
+                title="Minimalist Crewneck Pullover"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+              <ProductCard
+                image={PictureFive}
+                title="Lightweight Lounge Hoodie"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+              <ProductCard
+                image={PictureSix}
+                title="Classic Cotton Sweatshirt"
+                color="Beige"
+                price="57.43"
+                sizes={["S", "M", "L", "XL", "XXL"]}
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <button className="mt-10 border-2 border-black bg-white px-20 py-3 ml-3 text-black">
+              LOAD MORE
+            </button>
+          </div>
+        </div>
       </Layout>
     </>
   );
