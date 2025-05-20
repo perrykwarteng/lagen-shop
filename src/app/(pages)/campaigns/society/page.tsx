@@ -77,9 +77,8 @@ export default function Society() {
             through fashion, art, and culture.
           </p>
           <p className="text-gray-600 text-sm">
-            See how the world wears it. <br />
-            Get inspired. Get featured. <br />
-            Tag us. Show out.
+            See how the world wears it. Get inspired. Get featured. Tag us. Show
+            out.
             <br />
             This isn’t just fashion. It’s your stage. <br />
             #LBSociety #LAGENBUANE | @lagenbuane
