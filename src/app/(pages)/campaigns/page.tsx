@@ -12,7 +12,7 @@ export default function Accessories() {
         <div className="px-5 md:px-10 py-2 flex items-center justify-between gap-2 md:gap-4 list-none border-b border-black">
           <li>
             <Link
-              href="#"
+              href="campaigns/society"
               className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
             >
               LB Society
@@ -20,7 +20,7 @@ export default function Accessories() {
           </li>
           <li>
             <Link
-              href="#"
+              href="campaigns/archive"
               className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700"
             >
               LB Archive
@@ -28,7 +28,7 @@ export default function Accessories() {
           </li>
           <li>
             <Link
-              href="#"
+              href="campaigns/feed"
               className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
             >
               The Feed
@@ -37,7 +37,7 @@ export default function Accessories() {
 
           <li>
             <Link
-              href="#"
+              href="campaigns/seen-social"
               className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
             >
               Seen on Social
@@ -55,7 +55,7 @@ export default function Accessories() {
 
           <li>
             <Link
-              href="#"
+              href="campaigns/undressed"
               className="text-[10px] md:text-[12px] font-[500]  hover:text-gray-700 cursor-pointer"
             >
               Undressed+
