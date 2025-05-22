@@ -21,11 +21,14 @@ export default function Layout({ children }: LayoutProps) {
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
   };
+  const handleCloseProfile = () => {
+    setShowProfile(false);
+  };
   const handleShowCart = () => {
     setShowCart(!showCart);
   };
   const handleCloseCart = () => {
-    setShowCart(!showCart);
+    setShowCart(false);
   };
 
   return (
@@ -34,8 +37,20 @@ export default function Layout({ children }: LayoutProps) {
       <main className="relative">{children}</main>
       <Footer />
 
+      {(showCart || showProfile) && (
+        <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-40"></div>
+      )}
+
       {showProfile && (
         <div className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-0 top-16">
+          <div className="cancel flex justify-end">
+            <Image
+              className="w-5 h-5 cursor-pointer"
+              src={Cancel}
+              alt={"cancel icon"}
+              onClick={handleCloseProfile}
+            />
+          </div>
           <li>
             <Link
               href="/login"
@@ -72,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
       )}
 
       {showCart && (
-        <div className="w-[300px] md:w-[400px] z-50 py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-28">
+        <div className="w-[300px] md:w-[400px] z-50 py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-16">
           <div className="flex items-center justify-between py-2 px-7">
             <div className="text-[25px]">CART SUMMARY</div>
             <div className="cancel">
