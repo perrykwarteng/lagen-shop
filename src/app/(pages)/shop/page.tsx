@@ -55,7 +55,7 @@ export default function Shop() {
             </div>
             {womenNav && (
               <div
-                className="p-6 w-[300px] bg-white border border-black absolute top-8 left-0 flex flex-col md:flex-row items-start gap-5"
+                className="fixed top-36 p-6 z-40 left-0 w-screen bg-white border border-black flex flex-col md:flex-row items-start gap-5"
                 onMouseLeave={handleClose}
               >
                 <ul>
@@ -121,7 +121,7 @@ export default function Shop() {
             </div>
             {menNav && (
               <div
-                className="p-6 w-[300px] bg-white border border-black absolute top-8 left-0 flex flex-col md:flex-row items-start gap-5"
+                className="fixed top-36 p-6 z-40 left-0 w-screen bg-white border border-black flex flex-col md:flex-row items-start gap-5"
                 onMouseLeave={handleClose}
               >
                 <ul>
@@ -167,7 +167,7 @@ export default function Shop() {
             </div>
             {kidsNav && (
               <div
-                className="p-6 w-[300px] bg-white border border-black absolute top-8 left-0 flex flex-col md:flex-row items-start gap-5"
+                className="fixed top-36 p-6 z-40 left-0 w-screen bg-white border border-black flex flex-col md:flex-row items-start gap-5"
                 onMouseLeave={handleClose}
               >
                 <ul>
