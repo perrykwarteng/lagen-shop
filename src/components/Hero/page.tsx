@@ -11,7 +11,8 @@ import SmallGirlBanner from "../../../public/images/small-girl-banner.png";
 export const Hero = () => {
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
-    drag: false,
+    drag: true,
+    mode: "free-snap",
   });
 
   useEffect(() => {
@@ -24,29 +25,36 @@ export const Hero = () => {
     return () => clearInterval(interval);
   }, [instanceRef]);
 
+  const slides = [
+    { img: GirlBanner, title: "Stylish Women's Collection" },
+    { img: ManBanner, title: "Trendy Men's Fashion" },
+    { img: SmallGirlBanner, title: "Cute Kidswear Collection" },
+  ];
+
   return (
-    <div ref={sliderRef} className="keen-slider">
-      <div className="keen-slider__slide">
-        <Image
-          src={GirlBanner}
-          alt="banner one"
-          className="h-full bg-cover bg-no-repeat"
-        />
-      </div>
-      <div className="keen-slider__slide">
-        <Image
-          src={ManBanner}
-          alt="banner one"
-          className="h-full bg-cover bg-no-repeat"
-        />
-      </div>
-      <div className="keen-slider__slide">
-        <Image
-          src={SmallGirlBanner}
-          alt="banner one"
-          className="h-full bg-cover bg-no-repeat"
-        />
-      </div>
+    <div
+      ref={sliderRef}
+      className="keen-slider w-full h-[85vh] relative overflow-hidden rounded-xl"
+    >
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className="keen-slider__slide relative w-full h-full flex items-center justify-center"
+        >
+          <Image
+            src={slide.img}
+            alt={`Slide ${index + 1}`}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 flex items-center justify-center text-center">
+            <h2 className="text-white text-4xl md:text-5xl font-bold px-6">
+              {slide.title}
+            </h2>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
