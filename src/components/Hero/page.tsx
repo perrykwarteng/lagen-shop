@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import GirlBanner from "../../../public/images/girl-banner.png";
 import ManBanner from "../../../public/images/man-banner.png";
 import SmallGirlBanner from "../../../public/images/small-girl-banner.png";
+import Link from "next/link";
 
 export const Hero = () => {
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -17,11 +18,8 @@ export const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (instanceRef.current) {
-        instanceRef.current.next();
-      }
+      instanceRef.current?.next();
     }, 5000);
-
     return () => clearInterval(interval);
   }, [instanceRef]);
 
@@ -48,10 +46,24 @@ export const Hero = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 flex items-center justify-center text-center">
-            <h2 className="text-white text-4xl md:text-5xl font-bold px-6">
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+            <h2 className="text-white text-4xl md:text-5xl font-bold mb-6">
               {slide.title}
             </h2>
+            <div className="flex gap-4">
+              <Link
+                href="/shop"
+                className="px-6 py-2 text-white bg-black rounded-full text-sm md:text-base hover:bg-white hover:text-black transition"
+              >
+                Shop Now
+              </Link>
+              <Link
+                href="/contact"
+                className="px-6 py-2 text-black bg-white rounded-full text-sm md:text-base hover:bg-black hover:text-white transition"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       ))}
