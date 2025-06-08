@@ -60,7 +60,7 @@ export const NavBar = ({
           Your Access to the inner world of LA’GEN and BUANE.
         </p>
       </div>
-      <div className="nav1 flex items-center justify-between px-5 md:px-10 py-5 border-b border-black">
+      <div className="nav1 bg-white flex items-center justify-between px-5 md:px-10 py-5 border-b border-black">
         <div className="list one flex items-center gap-3 lg:gap-8">
           <p className="text-[14px] font-[500]">AU$</p>
           <div className="flex items-center gap-3 lg:gap-5">
