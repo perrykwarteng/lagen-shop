@@ -1,17 +1,22 @@
 import Layout from "@/components/Layout/layout";
 import { Hero } from "@/components/Hero/page";
 import { ProductCard } from "@/components/ProductCard/page";
-import { NewsLetterForm } from "@/components/NewsLetterForm/pasge";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
 import PictureOne from "../../public/images/picture1.png";
 import PictureTwo from "../../public/images/h2.jpg";
 import PictureThree from "../../public/images/h3.jpg";
 import PictureFour from "../../public/images/h4.jpg";
+import { Testimonials } from "@/components/Testimonial/page";
+import { CarefreeClassics } from "@/components/CareLess/page";
+import { ProductHighlights } from "@/components/ProductHighligth/page";
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
+      <div className="px-6 mt-9">
+        <ProductHighlights />
+      </div>
       <div className="px-5 md:px-10 py-5 md:py-10">
         <div className="text-center">
           <h3 className="text-[20px] font-medium">TRENDING</h3>
@@ -49,9 +54,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-4">
-        <NewsLetterForm />
-      </div>
+      <CarefreeClassics />
+      <Testimonials />
       <SubscriptionBanner />
     </Layout>
   );
