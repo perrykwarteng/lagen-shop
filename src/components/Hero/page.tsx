@@ -32,7 +32,7 @@ export const Hero = () => {
   return (
     <div
       ref={sliderRef}
-      className="keen-slider w-full h-[85vh] relative overflow-hidden rounded-xl"
+      className="keen-slider w-full h-[85vh] relative overflow-hidden"
     >
       {slides.map((slide, index) => (
         <div
@@ -56,12 +56,6 @@ export const Hero = () => {
                 className="px-6 py-2 text-white bg-black rounded-full text-sm md:text-base hover:bg-white hover:text-black transition"
               >
                 Shop Now
-              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-2 text-black bg-white rounded-full text-sm md:text-base hover:bg-black hover:text-white transition"
-              >
-                Contact Us
               </Link>
             </div>
           </div>
