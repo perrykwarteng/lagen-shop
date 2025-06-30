@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 type CategoryName = "Men Clothing" | "Women Clothing" | "Kids Clothing";
@@ -44,44 +43,26 @@ const categories: Categories = {
 };
 
 export const ShopNav = () => {
-  const [hovered, setHovered] = useState<CategoryName | null>(null);
-
   return (
-    <nav className="relative w-full bg-white border-b py-4">
-      <ul className="flex justify-center gap-8 text-lg font-semibold relative">
+    <nav className="w-full bg-white border border-black py-10 px-6">
+      <div className="max-w-7xl mx-auto flex justify-center gap-12 overflow-x-auto">
         {(Object.keys(categories) as CategoryName[]).map((category) => (
-          <li key={category} className="relative">
-            <div
-              className="group"
-              onMouseEnter={() => setHovered(category)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <button className="hover:text-gray-900 text-[15px] transition">
-                {category}
-              </button>
-
-              {hovered === category && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full p-6 grid grid-cols-2 md:grid-cols-3 gap-8 z-50 min-w-[500px] bg-white shadow-lg border">
-                  {categories[category].map((group, i) => (
-                    <ul key={i}>
-                      {group.map((item) => (
-                        <li key={item} className="my-1.5">
-                          <Link
-                            href="#"
-                            className="text-gray-700 hover:text-gray-900 text-sm"
-                          >
-                            {item}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ))}
-                </div>
-              )}
-            </div>
-          </li>
+          <div key={category} className="min-w-[200px]">
+            <h3 className="text-lg font-bold mb-4">{category}</h3>
+            {categories[category].map((group, i) => (
+              <ul key={i} className="mb-4 space-y-1">
+                {group.map((item) => (
+                  <li key={item}>
+                    <Link href="#" className="text-gray-800 text-sm">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
         ))}
-      </ul>
+      </div>
     </nav>
   );
 };
