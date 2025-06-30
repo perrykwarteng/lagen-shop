@@ -53,7 +53,7 @@ export const Hero = () => {
             <div className="flex gap-4">
               <Link
                 href="/shop"
-                className="px-6 py-2 text-white bg-black rounded-full text-sm md:text-base hover:bg-white hover:text-black transition"
+                className="px-6 py-2 text-white bg-white/10 backdrop-blur-sm text-sm md:text-base border border-white/30 hover:bg-white hover:text-black transition duration-300"
               >
                 Shop Now
               </Link>

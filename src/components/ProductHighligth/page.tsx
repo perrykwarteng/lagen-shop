@@ -4,6 +4,7 @@ import Image from "next/image";
 import One from "../../../public/images/One.jpg";
 import Two from "../../../public/images/Two.jpg";
 import Three from "../../../public/images/Three.jpg";
+import Link from "next/link";
 
 export const ProductHighlights = () => {
   const sections = [
@@ -11,16 +12,19 @@ export const ProductHighlights = () => {
       img: One,
       title: "Where Dreams Meet Couture",
       button: "Shop Now",
+      link: "/shop",
     },
     {
       img: Two,
       title: "Enchanting Styles for Every Woman",
-      button: "Shop Now",
+      button: "Collections",
+      link: "/collections/stella",
     },
     {
       img: Three,
       title: "Chic Footwear for City Living",
-      button: "Shop Now",
+      button: "Accessories",
+      link: "/accessories",
     },
   ];
 
@@ -44,6 +48,12 @@ export const ProductHighlights = () => {
             <h2 className="text-white text-xl md:text-2xl font-semibold mb-4">
               {item.title}
             </h2>
+            <Link
+              href={item.link}
+              className="px-6 py-2 text-white bg-white/10 backdrop-blur-sm text-sm md:text-base border border-white/30 hover:bg-white hover:text-black transition duration-300"
+            >
+              {item.button}
+            </Link>
           </div>
         </div>
       ))}
