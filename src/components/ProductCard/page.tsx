@@ -16,6 +16,7 @@ export const ProductCard = ({
   sizes: string[];
 }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [hoveringDisabled, setHoveringDisabled] = useState(false);
 
   const handleAddToCart = () => {
     if (selectedSize) {
@@ -31,8 +32,12 @@ export const ProductCard = ({
   };
 
   return (
-    <div className="max-w-[350px] shadow-md rounded-xl overflow-hidden bg-white transition hover:shadow-xl">
-      <Image className="w-full h-[450px] object-cover" src={image} alt={title} />
+    <div className="max-w-[350px] shadow-md rounded-xl overflow-hidden bg-white transition hover:shadow-xl relative">
+      <Image
+        className="w-full h-[450px] object-cover"
+        src={image}
+        alt={title}
+      />
 
       <div className="p-4">
         <p className="text-gray-700 text-sm">{title}</p>
@@ -40,7 +45,7 @@ export const ProductCard = ({
         <div className="text-gray-900 font-bold text-sm">AU$ {price}</div>
       </div>
 
-      <div className="px-4 pb-4">
+      <div className="px-4 pb-4 relative">
         <div className="flex flex-wrap gap-2 mb-4">
           {sizes.map((size) => (
             <button
@@ -57,17 +62,31 @@ export const ProductCard = ({
           ))}
         </div>
 
-        <button
-          onClick={handleAddToCart}
-          disabled={!selectedSize}
-          className={`w-full px-4 py-2 text-sm font-medium rounded-full transition ${
-            selectedSize
-              ? "bg-black text-white hover:bg-gray-800"
-              : "bg-gray-300 text-gray-600 cursor-not-allowed"
-          }`}
+        <div
+          className="relative w-full"
+          onMouseEnter={() => !selectedSize && setHoveringDisabled(true)}
+          onMouseLeave={() => setHoveringDisabled(false)}
         >
-          Add to Cart
-        </button>
+          <button
+            onClick={handleAddToCart}
+            disabled={!selectedSize}
+            className={`w-full px-4 py-2 text-sm font-medium rounded-full transition ${
+              selectedSize
+                ? "bg-black text-white hover:bg-gray-800"
+                : "bg-gray-300 text-gray-600 cursor-not-allowed"
+            }`}
+          >
+            Add to Cart
+          </button>
+
+          {/* Tooltip */}
+          {!selectedSize && hoveringDisabled && (
+            <div className="absolute top-[-38px] left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded-md shadow-md z-10">
+              Select size
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-[-6px] w-2 h-2 bg-black rotate-45"></div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
