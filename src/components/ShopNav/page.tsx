@@ -44,7 +44,7 @@ const categories: Categories = {
 
 export const ShopNav = () => {
   return (
-    <nav className="w-full bg-white border border-black py-10 px-6">
+    <nav className="w-full bg-white border mt-3 py-10 px-6">
       <div className="max-w-7xl mx-auto flex justify-center gap-12 overflow-x-auto">
         {(Object.keys(categories) as CategoryName[]).map((category) => (
           <div key={category} className="min-w-[200px]">
