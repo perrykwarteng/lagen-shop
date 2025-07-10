@@ -8,6 +8,7 @@ import { useState } from "react";
 export const MenuList = () => {
   const pathName = usePathname();
   const [isHoveringShop, setIsHoveringShop] = useState(false);
+  const [isHoveringCollection, setIsHoveringCollection] = useState(false);
 
   return (
     <div className="flex flex-col md:flex-row md:justify-between list-none gap-3 relative">
@@ -46,11 +47,13 @@ export const MenuList = () => {
 
       {/* COLLECTION */}
       <li
-        className={
+        className={`relative ${
           pathName === "/collections/stella"
             ? "active border-b-2 border-black"
             : ""
-        }
+        }`}
+        onMouseEnter={() => setIsHoveringCollection(true)}
+        onMouseLeave={() => setIsHoveringCollection(false)}
       >
         <Link
           href="/collections/stella"
@@ -58,6 +61,34 @@ export const MenuList = () => {
         >
           COLLECTION
         </Link>
+
+        {/* Fullscreen video dropdown on hover */}
+        {isHoveringCollection && (
+          <div className="absolute top-full -left-56 mt-5 w-screen h-screen z-50">
+            <div className="relative w-full h-full">
+              {/* Video background */}
+              <video
+                src="/videos/Fashion.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="object-cover w-full h-full"
+              />
+
+              {/* Overlay */}
+              <div className="absolute top-0 left-0 w-full h-full bg-black/70" />
+
+              {/* Optional Content */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                <h2 className="text-3xl md:text-5xl font-bold">
+                  Stella Collection
+                </h2>
+                <p className="mt-4 text-sm md:text-lg">Explore the unseen.</p>
+              </div>
+            </div>
+          </div>
+        )}
       </li>
 
       {/* ACCESSORIES */}
