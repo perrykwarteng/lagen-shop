@@ -19,10 +19,10 @@ export default function Home() {
       </div>
       <div className="px-5 md:px-10 py-5 md:py-10">
         <div className="text-center">
-          <h3 className="text-[20px] font-medium">TRENDING</h3>
+          <h3 className="text-[25px] font-semibold">TRENDING</h3>
         </div>
         <div className="flex flex-col items-center justify-center mt-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
             <ProductCard
               image={PictureOne}
               title="Willow Wrap Sweatshirt"
