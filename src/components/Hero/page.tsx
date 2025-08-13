@@ -14,6 +14,10 @@ export const Hero = () => {
     loop: true,
     drag: true,
     mode: "free-snap",
+    slides: {
+      perView: 1,
+      spacing: 0,
+    },
   });
 
   useEffect(() => {
@@ -32,7 +36,7 @@ export const Hero = () => {
   return (
     <div
       ref={sliderRef}
-      className="keen-slider w-full h-[85vh] relative overflow-hidden"
+      className="keen-slider w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] relative overflow-hidden"
     >
       {slides.map((slide, index) => (
         <div
@@ -45,15 +49,17 @@ export const Hero = () => {
             fill
             className="object-cover"
             priority
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            unoptimized
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
-            <h2 className="text-white text-4xl md:text-5xl font-bold mb-6">
+          <div className="absolute inset-0 bg-black/40 sm:bg-black/50 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
               {slide.title}
             </h2>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/shop"
-                className="px-6 py-2 text-white bg-white/10 backdrop-blur-sm text-sm md:text-base border border-white/30 hover:bg-white hover:text-black transition duration-300"
+                className="px-4 sm:px-6 py-2 sm:py-3 text-white bg-white/10 backdrop-blur-sm text-sm sm:text-base border border-white/30 hover:bg-white hover:text-black transition duration-300 rounded-sm"
               >
                 Shop Now
               </Link>

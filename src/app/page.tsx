@@ -2,50 +2,47 @@ import Layout from "@/components/Layout/layout";
 import { Hero } from "@/components/Hero/page";
 import { ProductCard } from "@/components/ProductCard/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
-import PictureOne from "../../public/images/picture1.png";
-import PictureTwo from "../../public/images/h2.jpg";
-import PictureThree from "../../public/images/h3.jpg";
-import PictureFour from "../../public/images/h4.jpg";
+
 import { Testimonials } from "@/components/Testimonial/page";
 import { CarefreeClassics } from "@/components/CareLess/page";
-import { ProductHighlights } from "@/components/ProductHighligth/page";
+import { ProductHighlights } from "@/components/ProductHighlight/page";
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
-      <div className="px-6 mt-9">
+      <div className="px-4 sm:px-6 mt-6 sm:mt-8 md:mt-9">
         <ProductHighlights />
       </div>
-      <div className="px-5 md:px-10 py-5 md:py-10">
+      <div className="px-4 sm:px-5 md:px-10 py-6 sm:py-8 md:py-10">
         <div className="text-center">
-          <h3 className="text-[25px] font-semibold">TRENDING</h3>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 sm:mb-6">TRENDING</h3>
         </div>
-        <div className="flex flex-col items-center justify-center mt-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
+        <div className="flex flex-col items-center justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl">
             <ProductCard
-              image={PictureOne}
+              image="/images/picture1.png"
               title="Willow Wrap Sweatshirt"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureTwo}
+              image="/images/h2.jpg"
               title="Cozy Knit Pullover"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureThree}
+              image="/images/h3.jpg"
               title="Essential Zip Hoodie"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureFour}
+              image="/images/h4.jpg"
               title="Classic Crewneck Sweater"
               color="Beige"
               price="57.43"

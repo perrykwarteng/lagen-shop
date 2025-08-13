@@ -16,7 +16,7 @@ export const MenuList = () => {
       <li className={pathName === "/" ? "active border-b-2 border-black" : ""}>
         <Link
           href="/"
-          className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700 cursor-pointer"
+          className="text-xs sm:text-sm font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
           HOME
         </Link>
@@ -32,14 +32,14 @@ export const MenuList = () => {
       >
         <Link
           href="/shop"
-          className="text-[14px] font-[500] hover:text-gray-700 cursor-pointer"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
           Shop
         </Link>
 
         {/* Only show mega nav if NOT on /shop */}
         {isHoveringShop && pathName !== "/shop" && (
-          <div className="absolute -left-36 top-full w-screen z-50">
+          <div className="absolute -left-36 top-full w-screen z-50 hidden md:block">
             <ShopNav />
           </div>
         )}
@@ -48,110 +48,76 @@ export const MenuList = () => {
       {/* COLLECTION */}
       <li
         className={`relative ${
-          pathName === "/collections/stella"
-            ? "active border-b-2 border-black"
-            : ""
+          pathName === "/collections" ? "active border-b-2 border-black" : ""
         }`}
-        onMouseEnter={() => setIsHoveringCollection(true)}
-        onMouseLeave={() => setIsHoveringCollection(false)}
+        onMouseEnter={() => pathName !== "/collections" && setIsHoveringCollection(true)}
+        onMouseLeave={() => pathName !== "/collections" && setIsHoveringCollection(false)}
       >
         <Link
-          href="/collections/stella"
-          className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700 cursor-pointer"
+          href="/collections"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
-          COLLECTION
+          Collections
         </Link>
 
-        {/* Fullscreen video dropdown on hover */}
-        {isHoveringCollection && (
-          <div className="absolute top-full -left-56 mt-5 w-screen h-screen z-50">
-            <div className="relative w-full h-full">
-              {/* Video background */}
-              <video
-                src="/videos/Fashion.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover w-full h-full"
-              />
-
-              {/* Overlay */}
-              <div className="absolute top-0 left-0 w-full h-full bg-black/70" />
-
-              {/* Optional Content */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h2 className="text-3xl md:text-5xl font-bold">
-                  Stella Collection
-                </h2>
-                <p className="mt-4 text-sm md:text-lg">Explore the unseen.</p>
+        {/* Only show mega nav if NOT on /collections */}
+        {isHoveringCollection && pathName !== "/collections" && (
+          <div className="absolute -left-36 top-full w-screen z-50 hidden md:block">
+            <div className="w-full bg-white border mt-3 py-10 px-6">
+              <div className="max-w-7xl mx-auto flex justify-center gap-12">
+                <div className="min-w-[200px]">
+                  <h3 className="text-lg font-bold mb-4">Featured Collections</h3>
+                  <ul className="space-y-1">
+                    <li>
+                      <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        New Arrivals
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        Best Sellers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        Seasonal
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         )}
       </li>
 
-      {/* ACCESSORIES */}
-      <li
-        className={
-          pathName === "/accessories" ? "active border-b-2 border-black" : ""
-        }
-      >
+      {/* LOOKBOOK */}
+      <li className={pathName === "/lookbook" ? "active border-b-2 border-black" : ""}>
         <Link
-          href="/accessories"
-          className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700 cursor-pointer"
+          href="/lookbook"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
-          ACCESSORIES
+          Lookbook
         </Link>
       </li>
 
-      {/* LB CIRCLE */}
-      <li
-        className={
-          pathName === "/rewards" ? "active border-b-2 border-black" : ""
-        }
-      >
+      {/* ABOUT */}
+      <li className={pathName === "/about" ? "active border-b-2 border-black" : ""}>
         <Link
-          href="/rewards"
-          className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700 cursor-pointer"
+          href="/about"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
-          LB CIRCLE ∞
+          About
         </Link>
       </li>
 
-      {/* LB NEXUS */}
-      <li
-        className={
-          pathName === "/campaigns" ? "active border-b-2 border-black" : ""
-        }
-      >
+      {/* CONTACT */}
+      <li className={pathName === "/contact" ? "active border-b-2 border-black" : ""}>
         <Link
-          href="/campaigns"
-          className="text-[10px] md:text-[12px] font-[500] hover:text-gray-700 cursor-pointer"
+          href="/contact"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
         >
-          LB NEXUS
-        </Link>
-      </li>
-
-      {/* EXTRA LINKS */}
-      <li>
-        <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-          Kids Clothing
-        </Link>
-      </li>
-      <li>
-        <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-          Unisex
-        </Link>
-      </li>
-      <li>
-        <Link href="#" className="text-[14px] font-[700] hover:text-gray-700">
-          THE UNKNOWN
-        </Link>
-      </li>
-      <li>
-        <Link href="#" className="text-[14px] font-[500] hover:text-gray-700">
-          Coming Soon
+          Contact
         </Link>
       </li>
     </div>
