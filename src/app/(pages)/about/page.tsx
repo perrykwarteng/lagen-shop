@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout/layout";
 import Image from "next/image";
-import AboutImg from "../../../../public/images/aboutImg.jpg";
 
 export default function About() {
   return (
@@ -17,7 +16,7 @@ export default function About() {
               Our Vision
             </h2>
             <p className="py-2 text-black opacity-50">
-              At La’gen, our vision is to empower individuals to express their
+              At La'gen, our vision is to empower individuals to express their
               unique sense of style through fashion. We believe that fashion is
               more than just clothing; it's a form of self-expression,
               confidence, and creativity. We strive to curate a diverse range of
@@ -40,11 +39,11 @@ export default function About() {
               embrace your unique style and make a statement wherever you go.
             </p>
             <p className="py-2 opacity-50">
-              Welcome to La’gen, where fashion meets individuality.
+              Welcome to La'gen, where fashion meets individuality.
             </p>
           </div>
           <div className="w-full md:w-6/12">
-            <Image className="" src={AboutImg} alt="About Image" />
+            <Image className="" src="/images/aboutImg.jpg" alt="About Image" unoptimized />
           </div>
         </div>
         <div className="px-5 md:px-10 py-3 md:py-10 text-center mt-5">
@@ -52,7 +51,7 @@ export default function About() {
             OUR BRAND IDENTITY
           </h2>
           <p className="py-2 opacity-50">
-            At La’gen, our brand identity is a vibrant tapestry woven from
+            At La'gen, our brand identity is a vibrant tapestry woven from
             passion, innovation, and a deep understanding of our customers'
             desires. We are not just a fashion brand; we are a lifestyle that
             celebrates individuality, embraces self-expression, and empowers
@@ -89,7 +88,7 @@ export default function About() {
             OUR BRAND PHILOSOPHY
           </h2>
           <p className="py-2 opacity-50">
-            At La’gen, our design philosophy is rooted in the belief that
+            At La'gen, our design philosophy is rooted in the belief that
             fashion is an art form, a means of self-expression, and a powerful
             tool for empowerment. We strive to create fashion collections that
             captivate the senses, ignite creativity, and inspire confidence in
@@ -128,12 +127,12 @@ export default function About() {
         <div className="px-6 md:px-12 py-5 md:py-12 bg-black text-white text-[15px]">
           <p>
             "Mesmerizing, enchanting, and flawlessly executed, the latest
-            collection from La’gen is an exquisite tapestry of sartorial
+            collection from La'gen is an exquisite tapestry of sartorial
             artistry. With each piece, the designer weaves a narrative that
             transcends the realm of fashion and ventures into the realm of pure
             poetry. From the ethereal draping to the intricate embellishments,
             every detail is meticulously crafted to evoke a sense of wonder and
-            leave the beholder spellbound...”
+            leave the beholder spellbound..."
           </p>
           <p className="text-right text-[15px]">Lynn Yaeger</p>
         </div>

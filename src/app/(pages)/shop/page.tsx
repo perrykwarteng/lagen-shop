@@ -5,16 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useState } from "react";
-import MensClothing from "../../../../public/icons/mensClothing.png";
-import WomensClothing from "../../../../public/icons/womenClothing.png";
-import KidsClothing from "../../../../public/icons/kidsClothing.png";
 import { ProductCard } from "@/components/ProductCard/page";
-import PictureOne from "../../../../public/images/a1.jpg";
-import PictureFive from "../../../../public/images/a5.jpg";
-import PictureSix from "../../../../public/images/a6.jpg";
-import PictureTwo from "../../../../public/images/c2.jpg";
-import PictureThree from "../../../../public/images/c3.jpg";
-import PictureFour from "../../../../public/images/c4.jpg";
 
 export default function Shop() {
   const [activeNav, setActiveNav] = useState<"women" | "men" | "kids" | null>(
@@ -47,7 +38,7 @@ export default function Shop() {
             <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
               <Image
                 className="w-4 sm:w-5"
-                src={WomensClothing}
+                src="/icons/womenClothing.png"
                 alt="womens clothing"
                 unoptimized
               />
@@ -109,7 +100,7 @@ export default function Shop() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image className="w-4 sm:w-5" src={MensClothing} alt="mens clothing" unoptimized />
+              <Image className="w-4 sm:w-5" src="/icons/mensClothing.png" alt="mens clothing" unoptimized />
               <h4 className="text-sm sm:text-base">Men Clothing</h4>
             </div>
             {activeNav === "men" && (
@@ -153,7 +144,7 @@ export default function Shop() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image className="w-4 sm:w-5" src={KidsClothing} alt="kids clothing" unoptimized />
+              <Image className="w-4 sm:w-5" src="/icons/kidsClothing.png" alt="kids clothing" unoptimized />
               <h4 className="text-sm sm:text-base">Kids Clothing</h4>
             </div>
             {activeNav === "kids" && (
@@ -191,42 +182,42 @@ export default function Shop() {
         <div className="flex flex-col items-center justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl">
             <ProductCard
-              image={PictureOne}
+              image="/images/a1.jpg"
               title="Elegant Wrap Cardigan"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureTwo}
+              image="/images/c2.jpg"
               title="Soft Touch Sweatshirt"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureThree}
+              image="/images/c3.jpg"
               title="Urban Zip-Up Hoodie"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureFour}
+              image="/images/c4.jpg"
               title="Minimalist Crewneck Pullover"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureFive}
+              image="/images/a5.jpg"
               title="Lightweight Lounge Hoodie"
               color="Beige"
               price="57.43"
               sizes={["S", "M", "L", "XL", "XXL"]}
             />
             <ProductCard
-              image={PictureSix}
+              image="/images/a6.jpg"
               title="Classic Cotton Sweatshirt"
               color="Beige"
               price="57.43"

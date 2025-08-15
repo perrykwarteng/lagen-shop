@@ -1,11 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Facebook from "../../../public/icons/facebook.png";
-import Twitter from "../../../public/icons/twitter.png";
-import Instagram from "../../../public/icons/instagram.png";
-import Pinterest from "../../../public/icons/pinterest.png";
-import Tiktok from "../../../public/icons/tiktok.png";
-import PaymentMode from "../../../public/icons/payment-mode.jpg";
 
 export const Footer = () => {
   return (
@@ -93,19 +87,19 @@ export const Footer = () => {
             </div>
                           <div className="flex gap-3 sm:gap-4">
                 <Link href="#" className="hover:opacity-80 transition-opacity">
-                  <Image src={Facebook} width="25" height="25" alt="Facebook" unoptimized />
+                  <Image src="/icons/facebook.png" width="25" height="25" alt="Facebook" unoptimized />
                 </Link>
                 <Link href="#" className="hover:opacity-80 transition-opacity">
-                  <Image src={Twitter} width="25" height="25" alt="X" unoptimized />
+                  <Image src="/icons/twitter.png" width="25" height="25" alt="X" unoptimized />
                 </Link>
                 <Link href="#" className="hover:opacity-80 transition-opacity">
-                  <Image src={Instagram} width="25" height="25" alt="Instagram" unoptimized />
+                  <Image src="/icons/instagram.png" width="25" height="25" alt="Instagram" unoptimized />
                 </Link>
                 <Link href="#" className="hover:opacity-80 transition-opacity">
-                  <Image src={Pinterest} width="25" height="25" alt="Pinterest" unoptimized />
+                  <Image src="/icons/pinterest.png" width="25" height="25" alt="Pinterest" unoptimized />
                 </Link>
                 <Link href="#" className="hover:opacity-80 transition-opacity">
-                  <Image src={Tiktok} width="25" height="25" alt="Tiktok" unoptimized />
+                  <Image src="/icons/tiktok.png" width="25" height="25" alt="Tiktok" unoptimized />
                 </Link>
               </div>
           </div>
@@ -132,7 +126,7 @@ export const Footer = () => {
             </div>
             <div className="text-sm mt-4 font-medium">WE ACCEPT</div>
             <div className="w-full max-w-[350px] mt-3">
-              <Image className="w-full h-auto" src={PaymentMode} alt="payment methods" unoptimized />
+              <Image className="w-full h-auto" src="/icons/payment-mode.jpg" alt="payment methods" unoptimized />
             </div>
           </div>
         </div>

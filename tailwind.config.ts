@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'sans': ['Futura', 'Futura PT', 'Century Gothic', 'Trebuchet MS', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'futura': ['Futura', 'Futura PT', 'Century Gothic', 'Trebuchet MS', 'sans-serif'],
+      },
       screens: {
         'xs': '475px',
         'sm': '640px',

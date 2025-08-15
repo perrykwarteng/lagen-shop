@@ -1,8 +1,5 @@
 import Layout from "@/components/Layout/layout";
 import Image from "next/image";
-import CamImgOne from "../../../../public/images/camOneImg.jpg";
-import CamImgTwo from "../../../../public/images/camTwoImg.jpg";
-import CamImgThree from "../../../../public/images/camThreeImg.jpg";
 import Link from "next/link";
 
 export default function Accessories() {
@@ -65,10 +62,10 @@ export default function Accessories() {
 
         <div className="px-5 md:px-10 md:py-8 py-2 text-center">
           <h2 className="text-[20px] md:text-[30px] font-medium">
-            LB Nexus is the heartbeat of LA’GEN & BUANE universe.
+            LB Nexus is the heartbeat of LA'GEN & BUANE universe.
           </h2>
           <p className="text-gray-600 text-sm">
-            It’s not just a community —- it’s a collective of visionaries,
+            It's not just a community —- it's a collective of visionaries,
             creators, and loyalists. From early drops and private events to
             shaping the future of the brand. <br />
             Tag us @lagenbuane to be featured in LB Nexus.
@@ -76,7 +73,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative">
-          <Image src={CamImgOne} alt="" />
+          <Image src="/images/camOneImg.jpg" alt="" unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}
@@ -88,7 +85,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative pt-8">
-          <Image src={CamImgTwo} alt="" />
+          <Image src="/images/camTwoImg.jpg" alt="" unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}
@@ -100,7 +97,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative pt-8">
-          <Image src={CamImgThree} alt="" />
+          <Image src="/images/camThreeImg.jpg" alt="" unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}

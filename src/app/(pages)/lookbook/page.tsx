@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Layout from "@/components/Layout/layout";
-import LookBookImg from "../../../../public/images/lookbookImg.jpg";
-import ImageThree from "../../../../public/images/camThreeImg.jpg";
 
 export default function LookBook() {
   return (
     <>
       <Layout>
         <div className="">
-          <Image src={ImageThree} alt="" />
+          <Image src="/images/camThreeImg.jpg" alt="" unoptimized />
         </div>
         <div className="py-8 px-5 flex flex-col items-center justify-center">
           <p className="text-center w-full md:w-[70%]">
@@ -21,7 +19,7 @@ export default function LookBook() {
           </button>
         </div>
         <div className="">
-          <Image src={LookBookImg} alt="" />
+          <Image src="/images/lookbookImg.jpg" alt="" unoptimized />
         </div>
       </Layout>
     </>

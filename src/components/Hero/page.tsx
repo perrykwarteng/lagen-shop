@@ -4,9 +4,6 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useEffect } from "react";
-import GirlBanner from "../../../public/images/girl-banner.png";
-import ManBanner from "../../../public/images/man-banner.png";
-import SmallGirlBanner from "../../../public/images/small-girl-banner.png";
 import Link from "next/link";
 
 export const Hero = () => {
@@ -28,9 +25,9 @@ export const Hero = () => {
   }, [instanceRef]);
 
   const slides = [
-    { img: GirlBanner, title: "Stylish Women's Collection" },
-    { img: ManBanner, title: "Trendy Men's Fashion" },
-    { img: SmallGirlBanner, title: "Cute Kidswear Collection" },
+    { img: "/images/girl-banner.png", title: "Stylish Women's Collection" },
+    { img: "/images/man-banner.png", title: "Trendy Men's Fashion" },
+    { img: "/images/small-girl-banner.png", title: "Cute Kidswear Collection" },
   ];
 
   return (

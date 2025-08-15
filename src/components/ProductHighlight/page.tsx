@@ -1,27 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import One from "../../../public/images/One.jpg";
-import Two from "../../../public/images/Two.jpg";
-import Three from "../../../public/images/Three.jpg";
 import Link from "next/link";
 
 export const ProductHighlights = () => {
   const sections = [
     {
-      img: One,
+      img: "/images/One.jpg",
       title: "Where Dreams Meet Couture",
       button: "Shop Now",
       link: "/shop",
     },
     {
-      img: Two,
+      img: "/images/Two.jpg",
       title: "Enchanting Styles for Every Woman",
       button: "Collections",
       link: "/collections/stella",
     },
     {
-      img: Three,
+      img: "/images/Three.jpg",
       title: "Chic Footwear for City Living",
       button: "Accessories",
       link: "/accessories",

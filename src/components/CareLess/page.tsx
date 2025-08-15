@@ -2,18 +2,17 @@
 
 import Image from "next/image";
 
-import CareLassImg from "../../../public/images/CarelessBanner.jpg";
-
 export const CarefreeClassics = () => {
   return (
     <section className="relative w-full h-[85vh] flex items-center justify-center bg-black">
       <div className="absolute inset-0">
         <Image
-          src={CareLassImg}
+          src="/images/CarelessBanner.jpg"
           alt="Carefree Classics Banner"
           fill
           className="object-cover opacity-60"
           priority
+          unoptimized
         />
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">

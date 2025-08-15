@@ -21,13 +21,11 @@ export const NavBar = ({
   const pathName = usePathname();
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
       const desktop = window.innerWidth >= 768;
-      setIsDesktop(desktop);
       if (desktop) {
         setShowMenu(true);
       } else {
