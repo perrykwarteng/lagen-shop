@@ -9,6 +9,7 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
+import { useAuth } from "../../context/AuthContext";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
@@ -47,34 +49,51 @@ export default function Layout({ children }: LayoutProps) {
             <Image
               className="w-5 h-5 cursor-pointer"
               src={Cancel}
-              alt={"cancel icon"}
+              alt="cancel icon"
               onClick={handleCloseProfile}
             />
           </div>
-          <li>
-            <Link
-              href="/login"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/register"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Register
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/accounts"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Account
-            </Link>
-          </li>
+
+          {isAuthenticated ? (
+            <div>
+              <li>
+                <Link
+                  href="/accounts"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                >
+                  Account
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={logout}
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                >
+                  Logout
+                </button>
+              </li>
+            </div>
+          ) : (
+            <div>
+              <li>
+                <Link
+                  href="/login"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/register"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                >
+                  Register
+                </Link>
+              </li>
+            </div>
+          )}
+
           <li>
             <Link
               href="/faqs"
