@@ -3,12 +3,6 @@ import Layout from "@/components/Layout/layout";
 import { ProductCard } from "@/components/ProductCard/page";
 import { SortHeader } from "@/components/SortHeader/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
-import PictureOne from "../../../../../public/images/c1.jpg";
-import PictureTwo from "../../../../../public/images/c2.jpg";
-import PictureThree from "../../../../../public/images/c3.jpg";
-import PictureFour from "../../../../../public/images/c4.jpg";
-import PictureFive from "../../../../../public/images/h3.jpg";
-import PictureSix from "../../../../../public/images/h4.jpg";
 
 export default function Collections() {
   return (
@@ -36,42 +30,42 @@ export default function Collections() {
           <div className="flex flex-col items-center justify-center my-10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               <ProductCard
-                image={PictureOne}
+                image="/images/c1.jpg"
                 title="Willow Wrap Sweatshirt"
                 color="Beige"
                 price="57.43"
                 sizes={["S", "M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureTwo}
+                image="/images/c2.jpg"
                 title="Cozy Knit Pullover"
                 color="Gray"
                 price="49.99"
                 sizes={["S", "M", "L", "XL"]}
               />
               <ProductCard
-                image={PictureThree}
+                image="/images/c3.jpg"
                 title="Relaxed Fit Hoodie"
                 color="Navy Blue"
                 price="64.99"
                 sizes={["M", "L", "XL", "XXL"]}
               />
               <ProductCard
-                image={PictureFour}
+                image="/images/c4.jpg"
                 title="Casual Zip-Up Jacket"
                 color="Black"
                 price="72.50"
                 sizes={["S", "M", "L"]}
               />
               <ProductCard
-                image={PictureFive}
+                image="/images/h3.jpg"
                 title="Vintage Crewneck Sweater"
                 color="Olive Green"
                 price="59.99"
                 sizes={["XS", "S", "M", "L", "XL"]}
               />
               <ProductCard
-                image={PictureSix}
+                image="/images/h4.jpg"
                 title="Lightweight Fleece Hoodie"
                 color="Burgundy"
                 price="54.75"
