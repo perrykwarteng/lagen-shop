@@ -22,7 +22,7 @@ export default function ResetPassword() {
   const token = searchParams.get("token");
 
   const validate = () => {
-    let newErrors: { password?: string; confirmPassword?: string } = {};
+    const newErrors: { password?: string; confirmPassword?: string } = {};
 
     if (!password) {
       newErrors.password = "Password is required";

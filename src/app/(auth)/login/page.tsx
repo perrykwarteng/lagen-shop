@@ -18,7 +18,7 @@ export default function Login() {
   );
   const router = useRouter();
   const validate = () => {
-    let newErrors: { email?: string; password?: string } = {};
+    const newErrors: { email?: string; password?: string } = {};
 
     if (!email) {
       newErrors.email = "Email is required";

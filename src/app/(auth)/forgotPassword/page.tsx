@@ -33,15 +33,18 @@ export default function ForgotPassword() {
       await requestPasswordReset(email);
       toast.success("Password reset link sent to your email");
       setEmail("");
-    } catch (err: any) {
-      toast.error(err?.message || "Something went wrong, try again");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        toast.error(err.message);
+      } else {
+        toast.error("Something went wrong, try again");
+      }
     }
   };
 
   return (
     <section className="px-10 py-10 min-h-screen overflow-hidden">
       <div className="flex flex-col items-center justify-center">
-        {/* Logo */}
         <Link href="/">
           <Image
             src={MainLogo}
@@ -51,7 +54,6 @@ export default function ForgotPassword() {
         </Link>
       </div>
 
-      {/* Forgot Password Section */}
       <div className="flex flex-col items-center justify-center mt-10">
         <h1 className="text-2xl font-semibold text-[#4A4844] mb-2">
           Forgot Password
@@ -61,7 +63,6 @@ export default function ForgotPassword() {
           password.
         </p>
 
-        {/* Form */}
         <div className="w-full md:w-[500px] flex flex-col items-center justify-center">
           <form className="w-full" onSubmit={handleSubmit}>
             <div className="my-3">

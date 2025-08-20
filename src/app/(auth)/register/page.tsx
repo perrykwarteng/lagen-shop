@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa6";
 
 export default function Register() {
-  const { register, loading, message, error } = useAuth();
+  const { register, loading } = useAuth();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
