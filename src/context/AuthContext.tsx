@@ -192,30 +192,33 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setLoading(true);
     setError("");
     setMessage("");
+
     try {
       const res = await fetch(`${baseUrl}/auth/password-reset/confirm`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: token, new_password: new_password }),
+        body: JSON.stringify({ token, new_password }),
       });
-      const data = await res.json();
+
+      const data: { message?: string } = await res.json();
 
       if (!res.ok) {
         return {
           success: false,
-          message: data.message ? data.message : "Failed to reset password",
+          message: data.message ?? "Failed to reset password",
         };
       }
 
       return {
         success: true,
-        message: data.message ? data.message : "Password reset successful",
+        message: data.message ?? "Password reset successful",
       };
-    } catch (err: any) {
-      return {
-        success: false,
-        message: err?.message || "Failed to reset password",
-      };
+    } catch (err: unknown) {
+      let message = "Failed to reset password";
+      if (err instanceof Error) {
+        message = err.message;
+      }
+      return { success: false, message };
     } finally {
       setLoading(false);
     }
