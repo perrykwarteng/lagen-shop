@@ -10,7 +10,7 @@ import MainLogo from "../../../../public/icons/main-logo.svg";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
-  const { login, loading, message, error } = useAuth();
+  const { login, loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<{ email?: string; password?: string }>(
@@ -45,10 +45,10 @@ export default function Login() {
     const res = await login(email, password);
 
     if (res.success) {
-      toast.success(message);
       router.push("/accounts");
+      toast.success(res.message);
     } else {
-      toast.error(error);
+      toast.error(res.message);
     }
   };
 
