@@ -1,7 +1,7 @@
 "use client";
 import { NavBar } from "@/components/NavBar/page";
 import { Footer } from "@/components/Footer/page";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Cancel from "../../../public/icons/close-cross.svg";
 import CartImage from "../../../public/icons/cart-image.svg";
@@ -9,6 +9,7 @@ import CartRemove from "../../../public/icons/cart-remove.svg";
 import CartAdd from "../../../public/icons/cart-add.svg";
 import CartDelete from "../../../public/icons/delete-icon.svg";
 import Link from "next/link";
+import { useAuth } from "../../context/AuthContext";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,6 +18,8 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showProfile, setShowProfile] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const { isAuthenticated, logout } = useAuth();
 
   const handleShowProfile = () => {
     setShowProfile(!showProfile);
@@ -24,6 +27,25 @@ export default function Layout({ children }: LayoutProps) {
   const handleCloseProfile = () => {
     setShowProfile(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        event.target instanceof Node &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setShowProfile(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const handleShowCart = () => {
     setShowCart(!showCart);
   };
@@ -42,43 +64,70 @@ export default function Layout({ children }: LayoutProps) {
       )}
 
       {showProfile && (
-        <div className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-4 top-16">
+        <div
+          ref={dropdownRef}
+          className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-0 top-16"
+        >
           <div className="cancel flex justify-end">
             <Image
               className="w-5 h-5 cursor-pointer"
               src={Cancel}
-              alt={"cancel icon"}
+              alt="cancel icon"
               onClick={handleCloseProfile}
             />
           </div>
-          <li>
-            <Link
-              href="/login"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/register"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Register
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/accounts"
-              className="text-[14px] font-[500] hover:text-gray-700"
-            >
-              Account
-            </Link>
-          </li>
+
+          {isAuthenticated ? (
+            <div>
+              <li>
+                <Link
+                  href="/accounts"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                  onClick={handleCloseProfile}
+                >
+                  Account
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    logout();
+                    handleCloseProfile();
+                  }}
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                >
+                  Logout
+                </button>
+              </li>
+            </div>
+          ) : (
+            <div>
+              <li>
+                <Link
+                  href="/login"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                  onClick={handleCloseProfile}
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/register"
+                  className="text-[14px] font-[500] hover:text-gray-700"
+                  onClick={handleCloseProfile}
+                >
+                  Register
+                </Link>
+              </li>
+            </div>
+          )}
+
           <li>
             <Link
               href="/faqs"
               className="text-[14px] font-[500] hover:text-gray-700"
+              onClick={handleCloseProfile}
             >
               FAQs
             </Link>

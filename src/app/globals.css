@@ -20,6 +20,12 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   font-family: 'Futura', 'Futura PT', 'Century Gothic', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,6 +37,25 @@ body {
   animation: scroll-left 200s linear infinite;
 }
 
+.spinner-white {
+  border: 4px solid rgba(0, 0, 0, 0.712);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: rgb(255, 255, 255);
+  animation: spin 1s ease infinite;
+  margin: auto;
+}
+
+.spinner-black {
+  border: 4px solid rgba(255, 255, 255, 0.712);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: rgb(0, 0, 0);
+  animation: spin 1s ease infinite;
+  margin: auto;
+}
 /* Mobile-first responsive utilities */
 @layer utilities {
   .line-clamp-2 {

@@ -1,17 +1,86 @@
+"use client";
+
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { useAuth } from "../../../context/AuthContext";
 import Link from "next/link";
 import Image from "next/image";
 import MainLogo from "../../../../public/icons/main-logo.svg";
 import GoogleImage from "../../../../public/icons/google.svg";
-import { FaUserPen } from "react-icons/fa6";
-import { FaPaperPlane } from "react-icons/fa6";
-import { FaClipboardList } from "react-icons/fa6";
-import { FaRegCreditCard } from "react-icons/fa6";
-import { FaListCheck } from "react-icons/fa6";
+import {
+  FaUserPen,
+  FaClipboardList,
+  FaRegCreditCard,
+  FaPaperPlane,
+  FaListCheck,
+} from "react-icons/fa6";
 
 export default function Register() {
+  const { register, loading } = useAuth();
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    birthday: "",
+    gender: "",
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!form.password.trim()) {
+      newErrors.password = "Password is required";
+    } else if (form.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+    return newErrors;
+  };
+
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const errorMsg = validateForm();
+  if (Object.keys(errorMsg).length > 0) {
+    setErrors(errorMsg);
+    toast.error("Please fix the highlighted errors");
+    return;
+  }
+
+  const result = await register(form);
+
+  if (result.success) {
+    toast.success(result.message);
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      birthday: "",
+      gender: "",
+    });
+  } else {
+    toast.error(result.message);
+  }
+};
+
+
   return (
     <section className="px-10 py-10 min-h-screen overflow-hidden">
-      <div className=" flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <Link href="/">
           <Image
             src={MainLogo}
@@ -44,49 +113,75 @@ export default function Register() {
           Enter your credentials to register an account
         </p>
         <div className="w-full md:w-[500px] flex flex-col items-center justify-center">
-          <form className="w-full">
+          <form className="w-full" onSubmit={handleSubmit}>
             <div className="flex items-center gap-2">
-              <div className="my-3">
+              <div className="my-3 w-full">
                 <label className="text-[16px] text-[#4A4844]">
                   First name*
                 </label>
                 <input
+                  name="firstName"
+                  value={form.firstName}
+                  onChange={handleChange}
                   className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                   placeholder="Enter your first name"
                   type="text"
                 />
+                {errors.firstName && (
+                  <p className="text-red-500 text-sm">{errors.firstName}</p>
+                )}
               </div>
-              <div className="my-3">
+              <div className="my-3 w-full">
                 <label className="text-[16px] text-[#4A4844]">Last name*</label>
                 <input
+                  name="lastName"
+                  value={form.lastName}
+                  onChange={handleChange}
                   className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                   placeholder="Enter your last name"
                   type="text"
                 />
+                {errors.lastName && (
+                  <p className="text-red-500 text-sm">{errors.lastName}</p>
+                )}
               </div>
             </div>
 
             <div className="my-3">
               <label className="text-[16px] text-[#4A4844]">E-mail*</label>
               <input
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                 placeholder="Enter your email address"
                 type="text"
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
             <div className="my-3">
               <label className="text-[16px] text-[#4A4844]">Password*</label>
               <input
+                name="password"
+                value={form.password}
+                onChange={handleChange}
                 className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                 placeholder="Enter your password"
                 type="password"
               />
+              {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password}</p>
+              )}
             </div>
             <div className="my-3">
               <label className="text-[16px] text-[#4A4844]">Birthday</label>
               <input
+                name="birthday"
+                value={form.birthday}
+                onChange={handleChange}
                 className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
-                placeholder="Enter your password"
                 type="date"
               />
             </div>
@@ -98,6 +193,9 @@ export default function Register() {
               <div className="">
                 <select
                   id="gender"
+                  name="gender"
+                  value={form.gender}
+                  onChange={handleChange}
                   className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                 >
                   <option value="male">Male</option>
@@ -125,9 +223,10 @@ export default function Register() {
             <div>
               <button
                 type="submit"
-                className="w-full py-3 mt-7 bg-black text-white shadow-lg"
+                disabled={loading}
+                className="w-full py-3 mt-7 bg-black text-white shadow-lg flex items-center justify-center"
               >
-                REGISTER
+                {loading ? <div className="spinner-white"></div> : "REGISTER"}
               </button>
             </div>
             <div className="text-[14px] mt-4">
