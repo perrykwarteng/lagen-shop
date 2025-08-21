@@ -126,7 +126,7 @@ export const Footer = () => {
             </div>
             <div className="text-sm mt-4 font-medium">WE ACCEPT</div>
             <div className="w-full max-w-[350px] mt-3">
-              <Image className="w-full h-auto" src="/icons/payment-mode.jpg" alt="payment methods" unoptimized />
+              <Image className="w-full h-auto" src="/icons/payment-mode.jpg" alt="payment methods" width={350} height={200} unoptimized />
             </div>
           </div>
         </div>

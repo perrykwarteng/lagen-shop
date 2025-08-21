@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden relative">
       <NavBar showProfile={handleShowProfile} showCart={handleShowCart} />
       <main className="relative">{children}</main>
       <Footer />
@@ -42,7 +42,7 @@ export default function Layout({ children }: LayoutProps) {
       )}
 
       {showProfile && (
-        <div className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-0 top-16">
+        <div className="w-[150px] z-50 bg-white list-none p-4 border-2 border-black absolute right-4 top-16">
           <div className="cancel flex justify-end">
             <Image
               className="w-5 h-5 cursor-pointer"
@@ -87,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
       )}
 
       {showCart && (
-        <div className="w-[300px] md:w-[400px] z-50 py-4 pb-7 bg-white list-none border-2 border-black absolute right-0 top-16">
+        <div className="w-[300px] md:w-[400px] z-50 py-4 pb-7 bg-white list-none border-2 border-black absolute right-4 top-16">
           <div className="flex items-center justify-between py-2 px-7">
             <div className="text-[25px]">CART SUMMARY</div>
             <div className="cancel">

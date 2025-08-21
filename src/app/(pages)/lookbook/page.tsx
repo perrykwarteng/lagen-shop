@@ -6,7 +6,7 @@ export default function LookBook() {
     <>
       <Layout>
         <div className="">
-          <Image src="/images/camThreeImg.jpg" alt="" unoptimized />
+          <Image src="/images/camThreeImg.jpg" alt="" width={1200} height={600} unoptimized />
         </div>
         <div className="py-8 px-5 flex flex-col items-center justify-center">
           <p className="text-center w-full md:w-[70%]">
@@ -19,7 +19,7 @@ export default function LookBook() {
           </button>
         </div>
         <div className="">
-          <Image src="/images/lookbookImg.jpg" alt="" unoptimized />
+          <Image src="/images/lookbookImg.jpg" alt="" width={1200} height={800} unoptimized />
         </div>
       </Layout>
     </>

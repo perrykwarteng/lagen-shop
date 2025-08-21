@@ -65,7 +65,7 @@ export default function LagenRewards() {
     <>
       <Layout>
         <div className="min-w-screen">
-          <Image className="w-full h-full" src="/images/RewardHeader-image.jpg" alt="" unoptimized />
+          <Image className="w-full h-full" src="/images/RewardHeader-image.jpg" alt="" width={1200} height={400} unoptimized />
         </div>
         <div className="px-5 md:px-10 pt-5 md:pt-12">
           <h2 className="text-[23px] font-semibold">
@@ -82,7 +82,7 @@ export default function LagenRewards() {
         </div>
         <div className="flex flex-col md:flex-row items-center gap-5 py-8">
           <div className="w-full md:w-[70%]">
-            <Image className="w-full" src="/images/birthday-reward.jpg" alt="" unoptimized />
+            <Image className="w-full" src="/images/birthday-reward.jpg" alt="" width={800} height={600} unoptimized />
           </div>
           <div className="w-full md:w-[45%] px-10">
             <h2 className="text-[23px] font-semibold">BIRTHDAY REWARDS</h2>
@@ -103,12 +103,12 @@ export default function LagenRewards() {
             </p>
           </div>
           <div className="w-full md:w-[70%]">
-            <Image className="w-full" src="/images/vip-access.jpg" alt="" unoptimized />
+            <Image className="w-full" src="/images/vip-access.jpg" alt="" width={800} height={600} unoptimized />
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-5 py-8">
           <div className="w-full md:w-[70%]">
-            <Image className="w-full" src="/images/exclusive-offer.jpg" alt="" unoptimized />
+            <Image className="w-full" src="/images/exclusive-offer.jpg" alt="" width={800} height={600} unoptimized />
           </div>
           <div className="w-full md:w-[45%] px-10">
             <h2 className="text-[23px] font-semibold">EXCLUSIVE OFFERS</h2>
