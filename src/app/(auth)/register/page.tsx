@@ -18,25 +18,32 @@ import {
 export default function Register() {
   const { register, loading } = useAuth();
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
-    birthday: "",
-    gender: "",
+    date_of_birth: "",
+    gender: "male",
+    newsletter_subscription: false,
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, type, value, checked } = e.target as HTMLInputElement;
+
+    setForm({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
-    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!form.first_name.trim())
+      newErrors.first_name = "First name is required";
+    if (!form.last_name.trim()) newErrors.last_ame = "Last name is required";
     if (!form.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
@@ -50,33 +57,33 @@ export default function Register() {
     return newErrors;
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const errorMsg = validateForm();
-  if (Object.keys(errorMsg).length > 0) {
-    setErrors(errorMsg);
-    toast.error("Please fix the highlighted errors");
-    return;
-  }
+    const errorMsg = validateForm();
+    if (Object.keys(errorMsg).length > 0) {
+      setErrors(errorMsg);
+      toast.error("Please fix the highlighted errors");
+      return;
+    }
 
-  const result = await register(form);
+    const result = await register(form);
 
-  if (result.success) {
-    toast.success(result.message);
-    setForm({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      birthday: "",
-      gender: "",
-    });
-  } else {
-    toast.error(result.message);
-  }
-};
-
+    if (result.success) {
+      toast.success(result.message);
+      setForm({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        date_of_birth: "",
+        gender: "",
+        newsletter_subscription: false,
+      });
+    } else {
+      toast.error(result.message);
+    }
+  };
 
   return (
     <section className="px-10 py-10 min-h-screen overflow-hidden">
@@ -120,29 +127,29 @@ export default function Register() {
                   First name*
                 </label>
                 <input
-                  name="firstName"
-                  value={form.firstName}
+                  name="first_name"
+                  value={form.first_name}
                   onChange={handleChange}
                   className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                   placeholder="Enter your first name"
                   type="text"
                 />
-                {errors.firstName && (
-                  <p className="text-red-500 text-sm">{errors.firstName}</p>
+                {errors.first_name && (
+                  <p className="text-red-500 text-sm">{errors.first_name}</p>
                 )}
               </div>
               <div className="my-3 w-full">
                 <label className="text-[16px] text-[#4A4844]">Last name*</label>
                 <input
-                  name="lastName"
-                  value={form.lastName}
+                  name="last_name"
+                  value={form.last_name}
                   onChange={handleChange}
                   className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                   placeholder="Enter your last name"
                   type="text"
                 />
-                {errors.lastName && (
-                  <p className="text-red-500 text-sm">{errors.lastName}</p>
+                {errors.last_name && (
+                  <p className="text-red-500 text-sm">{errors.last_name}</p>
                 )}
               </div>
             </div>
@@ -178,8 +185,8 @@ export default function Register() {
             <div className="my-3">
               <label className="text-[16px] text-[#4A4844]">Birthday</label>
               <input
-                name="birthday"
-                value={form.birthday}
+                name="date_of_birth"
+                value={form.date_of_birth}
                 onChange={handleChange}
                 className="w-full py-2.5 px-2.5 border-2 border-[#00000086] rounded-md"
                 type="date"
@@ -206,7 +213,13 @@ export default function Register() {
             </div>
 
             <div className="flex items-start gap-1 mt-2">
-              <input type="checkbox" name="" id="subscrip" />
+              <input
+                type="checkbox"
+                id="subscrip"
+                name="newsletter_subscription"
+                checked={form.newsletter_subscription}
+                onChange={handleChange}
+              />
               <label htmlFor="subscrip" className="text-[#4A4844]">
                 Subscribe to receive email updates about La’Gen products
                 launches, promotions and exclusion discount.

@@ -28,7 +28,7 @@ const SidebarItem = ({ href, label }: SidebarItemProps) => {
 
 const navigationItems = [
   { href: "/accounts", label: "MY ACCOUNT" },
-  { href: "#", label: "DASHBOARD" },
+  { href: "/accounts", label: "DASHBOARD" },
   { href: "/accounts/orders", label: "ORDER HISTORY" },
   { href: "/accounts/account-details", label: "ACCOUNT DETAILS" },
   { href: "/accounts/wishlist", label: "WISHLIST" },
@@ -57,16 +57,22 @@ export function AccountLayout({ children }: { children: React.ReactNode }) {
         </aside>
 
         {/* Main content area */}
-        <main className="flex-1">
-          <header className="flex justify-end p-4 h-[200px] border-b border-gray-200 bg-[url('/icons/dashboard-bg.png')] bg-cover">
-            <Link
-              href="/logout"
-              className="text-sm font-medium text-black hover:text-gray-700 transition-colors"
-            >
-              LOGOUT
-            </Link>
-          </header>
-          <div className="p-6">{children}</div>
+        <main className="flex-1 bg-[url('/icons/dashboard-bg.png')] bg-cover bg-center relative">
+          {/* Glass overlay */}
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-md z-0"></div>
+
+          {/* Content */}
+          <div className="relative z-10">
+            <header className="flex justify-end p-4 h-[200px] border-b border-gray-200 bg-[url('/icons/dashboard-bg.png')] bg-cover bg-center">
+              <Link
+                href="/logout"
+                className="text-sm font-medium text-black hover:text-gray-700 transition-colors"
+              >
+                LOGOUT
+              </Link>
+            </header>
+            <div className="p-6">{children}</div>
+          </div>
         </main>
       </div>
       <div className=" ">

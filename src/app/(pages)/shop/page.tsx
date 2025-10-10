@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useState } from "react";
-import { ProductCard } from "@/components/ProductCard/page";
+import { ProductCard } from "@/components/ProductCard/ProductCard";
 
 export default function Shop() {
   const [activeNav, setActiveNav] = useState<"women" | "men" | "kids" | null>(
@@ -48,45 +48,110 @@ export default function Shop() {
               <div className="absolute top-full p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">All Women's</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      All Women's
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Dresses</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Dresses
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Tops</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Tops
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Bottoms</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Bottoms
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Jumpsuits & Playsuits</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Jumpsuits & Playsuits
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Co-Ords & Sets</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Co-Ords & Sets
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Bodysuits</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Bodysuits
+                    </Link>
                   </li>
                 </ul>
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Skirts</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Skirts
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Jackets</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Jackets
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Hoodies & Jumpers</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Hoodies & Jumpers
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Swimwear</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Swimwear
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Lingerie & Sleepwear</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Lingerie & Sleepwear
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Underwear</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Underwear
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -100,37 +165,82 @@ export default function Shop() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image className="w-4 sm:w-5" src="/icons/mensClothing.png" alt="mens clothing" unoptimized />
+              <Image
+                className="w-4 sm:w-5"
+                src="/icons/mensClothing.png"
+                alt="mens clothing"
+                unoptimized
+              />
               <h4 className="text-sm sm:text-base">Men Clothing</h4>
             </div>
             {activeNav === "men" && (
               <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">All Mens</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      All Mens
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Jackets</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Jackets
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Tops</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Tops
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Bottoms</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Bottoms
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Co-Ords & Sets</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Co-Ords & Sets
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Hoodies & Jumpsuits</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Hoodies & Jumpsuits
+                    </Link>
                   </li>
                 </ul>
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Boxers & Briefs</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Boxers & Briefs
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">Swimwear</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      Swimwear
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -144,26 +254,56 @@ export default function Shop() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image className="w-4 sm:w-5" src="/icons/kidsClothing.png" alt="kids clothing" unoptimized />
+              <Image
+                className="w-4 sm:w-5"
+                src="/icons/kidsClothing.png"
+                alt="kids clothing"
+                unoptimized
+              />
               <h4 className="text-sm sm:text-base">Kids Clothing</h4>
             </div>
             {activeNav === "kids" && (
               <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">All Kids</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      All Kids
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">3 - 5 years</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      3 - 5 years
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">5 - 7 years</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      5 - 7 years
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">7 - 10 years</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      7 - 10 years
+                    </Link>
                   </li>
                   <li className="my-1.5">
-                    <Link href="#" className="text-sm hover:text-gray-600 block py-1">10 - 13 years</Link>
+                    <Link
+                      href="#"
+                      className="text-sm hover:text-gray-600 block py-1"
+                    >
+                      10 - 13 years
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -174,7 +314,9 @@ export default function Shop() {
 
       {/* SHOP SECTION TITLE */}
       <div className="mt-6 sm:mt-8 md:mt-10 text-center">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#333334] font-semibold">SHOP</h2>
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#333334] font-semibold">
+          SHOP
+        </h2>
       </div>
 
       {/* PRODUCTS */}

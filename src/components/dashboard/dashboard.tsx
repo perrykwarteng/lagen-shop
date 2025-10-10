@@ -18,8 +18,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="bg-white p-6 max-w-3xl mx-auto">
-      <div className="w-full min-h-[350px] shadow-lg p-5 px-10 rounded-md">
+    <div className="p-6 min-w-full mx-auto">
+      <div className="w-full bg-white min-h-[350px] shadow-lg p-5 px-10 rounded-md">
         <div className="flex justify-end">
           <h3 className="text-lg  font-bold">HELLO, {user.name}</h3>
         </div>

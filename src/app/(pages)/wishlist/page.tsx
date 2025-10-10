@@ -1,5 +1,5 @@
 import { Heading } from "@/components/Heading/Heading";
-import { ProductCard } from "@/components/ProductCard/page";
+import { ProductCard } from "@/components/ProductCard/ProductCard";
 import { SortHeader } from "@/components/SortHeader/page";
 import { SubscriptionBanner } from "@/components/SubscriptionBanner/page";
 import Layout from "@/components/Layout/layout";
