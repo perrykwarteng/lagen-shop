@@ -73,7 +73,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative">
-          <Image src="/images/camOneImg.jpg" alt="" unoptimized />
+          <Image src="/images/camOneImg.jpg" alt="" width={1200} height={600} unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}
@@ -85,7 +85,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative pt-8">
-          <Image src="/images/camTwoImg.jpg" alt="" unoptimized />
+          <Image src="/images/camTwoImg.jpg" alt="" width={1200} height={600} unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}
@@ -97,7 +97,7 @@ export default function Accessories() {
         </div>
 
         <div className="px-5 md:px-10 flex justify-center relative pt-8">
-          <Image src="/images/camThreeImg.jpg" alt="" unoptimized />
+          <Image src="/images/camThreeImg.jpg" alt="" width={1200} height={600} unoptimized />
           <div className="absolute bottom-10">
             <Link
               href={"lookbook"}

@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import ProfileIcon from "../../../public/icons/profile-icon.svg";
-import MainLogo from "../../../public/icons/main-logo.svg";
 import { FaSearch } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
@@ -96,8 +94,10 @@ export const NavBar = ({
         <div className="logo">
           <Link href="/">
             <Image
-              src={MainLogo}
+              src="/icons/main-logo.svg"
               alt="Main Logo"
+              width={300}
+              height={60}
               className="w-[120px] sm:w-[150px] md:w-[200px] lg:w-[250px] xl:w-[300px]"
               priority
               unoptimized
@@ -108,7 +108,7 @@ export const NavBar = ({
         <div className="list two flex items-center gap-2 sm:gap-3 lg:gap-8">
           <Link
             href="/wishlist"
-            className="text-xs sm:text-sm font-medium hover:text-gray-700 cursor-pointer hidden sm:block"
+            className="text-xs sm:text-sm font-medium hover:text-gray-700 cursor-pointer"
           >
             WISHLIST
           </Link>
@@ -120,8 +120,10 @@ export const NavBar = ({
             CART
           </Link>
           <Image
-            src={ProfileIcon}
+            src="/icons/profile-icon.svg"
             alt="profile-icon"
+            width={30}
+            height={30}
             onClick={showProfile}
             className="cursor-pointer w-[18px] sm:w-[20px] md:w-[25px] lg:w-[30px] hover:opacity-80 transition-opacity"
             unoptimized
@@ -133,7 +135,7 @@ export const NavBar = ({
       <div
         className={
           showMenu
-            ? "block md:hidden px-4 sm:px-5 py-4 gap-3 shadow-lg border-b border-gray-200 w-full bg-white absolute z-40 top-full"
+            ? "block md:hidden px-4 sm:px-5 py-4 gap-3 shadow-lg border-b border-gray-200 w-full bg-white absolute z-50 top-full left-0"
             : "hidden"
         }
       >
@@ -146,8 +148,8 @@ export const NavBar = ({
       </div>
 
       {/* Search Bar */}
-      <div className={showSearch ? "block relative" : "hidden"}>
-        <form onSubmit={handleSearchSubmit} className="relative">
+      <div className={showSearch ? "block relative w-full" : "hidden"}>
+        <form onSubmit={handleSearchSubmit} className="relative w-full">
           <FaSearch className="absolute top-3 left-3 text-gray-400" />
           <input
             className="pl-10 pr-4 py-3 w-full border border-gray-300 placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"

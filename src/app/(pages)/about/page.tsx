@@ -43,7 +43,7 @@ export default function About() {
             </p>
           </div>
           <div className="w-full md:w-6/12">
-            <Image className="" src="/images/aboutImg.jpg" alt="About Image" unoptimized />
+            <Image className="" src="/images/aboutImg.jpg" alt="About Image" width={600} height={400} unoptimized />
           </div>
         </div>
         <div className="px-5 md:px-10 py-3 md:py-10 text-center mt-5">

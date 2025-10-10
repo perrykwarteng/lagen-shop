@@ -20,7 +20,7 @@ const categories: Categories = {
   ],
   "Women Clothing": [
     [
-      "All Women’s",
+      "All Women's",
       "Dresses",
       "Tops",
       "Bottoms",
@@ -44,24 +44,59 @@ const categories: Categories = {
 
 export const ShopNav = () => {
   return (
-    <nav className="w-full bg-white border mt-3 py-10 px-6">
-      <div className="max-w-7xl mx-auto flex justify-center gap-12 overflow-x-auto">
-        {(Object.keys(categories) as CategoryName[]).map((category) => (
-          <div key={category} className="min-w-[200px]">
-            <h3 className="text-lg font-bold mb-4">{category}</h3>
-            {categories[category].map((group, i) => (
-              <ul key={i} className="mb-4 space-y-1">
-                {group.map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-800 text-sm">
-                      {item}
-                    </Link>
-                  </li>
+    <nav className="w-full bg-white">
+      {/* Desktop Layout */}
+      <div className="hidden md:block border-b border-gray-200 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="flex justify-center gap-16">
+            {(Object.keys(categories) as CategoryName[]).map((category) => (
+              <div key={category} className="min-w-[250px]">
+                <h3 className="text-lg font-bold mb-6 text-gray-900">{category}</h3>
+                {categories[category].map((group, i) => (
+                  <ul key={i} className="mb-6 space-y-3">
+                    {group.map((item) => (
+                      <li key={item}>
+                        <Link 
+                          href="#" 
+                          className="text-gray-700 text-sm hover:text-black transition-colors duration-200 block py-1"
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 ))}
-              </ul>
+              </div>
             ))}
           </div>
-        ))}
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="md:hidden">
+        <div className="px-4 py-4 space-y-6">
+          {(Object.keys(categories) as CategoryName[]).map((category) => (
+            <div key={category}>
+              <h3 className="text-base font-bold mb-3 text-gray-900 border-b border-gray-200 pb-2">
+                {category}
+              </h3>
+              {categories[category].map((group, i) => (
+                <ul key={i} className="mb-4 space-y-2">
+                  {group.map((item) => (
+                    <li key={item}>
+                      <Link 
+                        href="#" 
+                        className="text-gray-700 text-sm hover:text-black transition-colors duration-200 block py-2 px-2 rounded hover:bg-gray-50"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </nav>
   );

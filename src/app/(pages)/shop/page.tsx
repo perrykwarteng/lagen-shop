@@ -6,9 +6,13 @@ import Image from "next/image";
 
 import { useState } from "react";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Shop() {
   const [activeNav, setActiveNav] = useState<"women" | "men" | "kids" | null>(
+    null
+  );
+  const [mobileNav, setMobileNav] = useState<"women" | "men" | "kids" | null>(
     null
   );
 
@@ -18,6 +22,10 @@ export default function Shop() {
 
   const handleMouseLeave = () => {
     setActiveNav(null);
+  };
+
+  const handleMobileNavClick = (category: "women" | "men" | "kids") => {
+    setMobileNav(mobileNav === category ? null : category);
   };
 
   return (
@@ -35,7 +43,10 @@ export default function Shop() {
             onMouseEnter={() => handleMouseEnter("women")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
+            <div 
+              className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0"
+              onClick={() => handleMobileNavClick("women")}
+            >
               <Image
                 className="w-4 sm:w-5"
                 src="/icons/womenClothing.png"
@@ -43,9 +54,15 @@ export default function Shop() {
                 unoptimized
               />
               <h4 className="text-sm sm:text-base">Women Clothing</h4>
+              {/* Mobile dropdown arrow */}
+              <button className="md:hidden p-1 ml-2">
+                {mobileNav === "women" ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+              </button>
             </div>
+            
+            {/* Desktop submenu */}
             {activeNav === "women" && (
-              <div className="absolute top-full p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
+              <div className="absolute top-full p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none md:block">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
                     <Link
@@ -156,6 +173,57 @@ export default function Shop() {
                 </ul>
               </div>
             )}
+
+            {/* Mobile submenu */}
+            {mobileNav === "women" && (
+              <div className="md:hidden mt-2 pl-4 border-l-2 border-gray-200 bg-gray-50 rounded-r-lg">
+                <div className="p-4 space-y-3">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">All Women's</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Dresses</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Tops</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Bottoms</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Jumpsuits & Playsuits</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Co-Ords & Sets</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Bodysuits</Link>
+                    </li>
+                  </ul>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Skirts</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Jackets</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Hoodies & Jumpers</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Swimwear</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Lingerie & Sleepwear</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Underwear</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* MEN CLOTHING */}
@@ -164,17 +232,21 @@ export default function Shop() {
             onMouseEnter={() => handleMouseEnter("men")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image
-                className="w-4 sm:w-5"
-                src="/icons/mensClothing.png"
-                alt="mens clothing"
-                unoptimized
-              />
+            <div 
+              className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0"
+              onClick={() => handleMobileNavClick("men")}
+            >
+              <Image className="w-4 sm:w-5" src="/icons/mensClothing.png" alt="mens clothing" width={20} height={20} unoptimized />
               <h4 className="text-sm sm:text-base">Men Clothing</h4>
+              {/* Mobile dropdown arrow */}
+              <button className="md:hidden p-1 ml-2">
+                {mobileNav === "men" ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+              </button>
             </div>
+            
+            {/* Desktop submenu */}
             {activeNav === "men" && (
-              <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
+              <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none md:block">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
                     <Link
@@ -245,6 +317,42 @@ export default function Shop() {
                 </ul>
               </div>
             )}
+
+            {/* Mobile submenu */}
+            {mobileNav === "men" && (
+              <div className="md:hidden mt-2 pl-4 border-l-2 border-gray-200 bg-gray-50 rounded-r-lg">
+                <div className="p-4 space-y-3">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">All Mens</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Jackets</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Tops</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Bottoms</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Co-Ords & Sets</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Hoodies & Jumpsuits</Link>
+                    </li>
+                  </ul>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Boxers & Briefs</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">Swimwear</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* KIDS CLOTHING */}
@@ -253,17 +361,21 @@ export default function Shop() {
             onMouseEnter={() => handleMouseEnter("kids")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0">
-              <Image
-                className="w-4 sm:w-5"
-                src="/icons/kidsClothing.png"
-                alt="kids clothing"
-                unoptimized
-              />
+            <div 
+              className="flex items-center justify-center gap-1.5 cursor-pointer py-2 md:py-0"
+              onClick={() => handleMobileNavClick("kids")}
+            >
+              <Image className="w-4 sm:w-5" src="/icons/kidsClothing.png" alt="kids clothing" width={20} height={20} unoptimized />
               <h4 className="text-sm sm:text-base">Kids Clothing</h4>
+              {/* Mobile dropdown arrow */}
+              <button className="md:hidden p-1 ml-2">
+                {mobileNav === "kids" ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+              </button>
             </div>
+            
+            {/* Desktop submenu */}
             {activeNav === "kids" && (
-              <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none">
+              <div className="absolute top-full left-0 p-4 sm:p-6 z-40 flex flex-col md:flex-row items-start gap-3 sm:gap-5 w-full md:w-screen bg-white border-b border-gray-200 md:border-none md:block">
                 <ul className="w-full md:w-auto">
                   <li className="my-1.5">
                     <Link
@@ -306,6 +418,31 @@ export default function Shop() {
                     </Link>
                   </li>
                 </ul>
+              </div>
+            )}
+
+            {/* Mobile submenu */}
+            {mobileNav === "kids" && (
+              <div className="md:hidden mt-2 pl-4 border-l-2 border-gray-200 bg-gray-50 rounded-r-lg">
+                <div className="p-4">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">All Kids</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">3 - 5 years</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">5 - 7 years</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">7 - 10 years</Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="text-sm hover:text-gray-600 block py-2 px-2 rounded hover:bg-white">10 - 13 years</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
           </div>

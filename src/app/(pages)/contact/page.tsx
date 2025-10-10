@@ -50,13 +50,13 @@ export default function Contact() {
               <h3 className="font-semibold">Social Media</h3>
               <div className="mt-4">
                 <div className="flex items-center gap-3 my-1">
-                  <Image className="w-7" src="/icons/instagram.png" alt="" unoptimized />
+                  <Image className="w-7" src="/icons/instagram.png" alt="" width={28} height={28} unoptimized />
                   <Link href="#" className="underline">
                     https://www.instagram.com/la'gen/
                   </Link>
                 </div>
                 <div className="flex items-center gap-3 my-1">
-                  <Image className="w-7" src="/icons/tiktok.png" alt="" unoptimized />
+                  <Image className="w-7" src="/icons/tiktok.png" alt="" width={28} height={28} unoptimized />
                   <Link href="#" className="underline">
                     https://www.tiktok.com/@la'gen
                   </Link>
