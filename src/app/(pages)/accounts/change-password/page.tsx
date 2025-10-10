@@ -2,44 +2,34 @@
 
 import { AccountLayout } from "@/components/Layout/account-layout";
 import Layout from "@/components/Layout/layout";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 export default function ChangePasswordPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Reset error
     setError("");
+    setSuccess("");
 
-    // Validate password length
     if (password.length < 6) {
-      setError("Password has to be at least 6 characters.");
+      setError("Password must be at least 6 characters long.");
       return;
     }
 
-    // Validate password match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
     }
 
-    // Submit form (in a real app, this would call an API)
+    // Simulate successful update (replace with API call)
     console.log("Password updated successfully");
-    // Reset form
+    setSuccess("Password updated successfully!");
+
+    // Reset fields
     setPassword("");
     setConfirmPassword("");
   };
@@ -47,54 +37,53 @@ export default function ChangePasswordPage() {
   return (
     <Layout>
       <AccountLayout>
-        <h1>CHANGE PASSWORD </h1>
-
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-          <div className="mb-4">
-            <div className="relative">
+        <div className="bg-white border border-black rounded-[15px] p-6 min-h-[300px]">
+          <h2 className="text-lg font-semibold mb-4">Change Password</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
               <input
-                type={showPassword ? "text" : "password"}
+                type="password"
+                name="password"
+                placeholder="New Password"
                 value={password}
-                onChange={(e: { target: { value: SetStateAction<string> } }) =>
-                  setPassword(e.target.value)
-                }
-                className="pr-12"
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full border rounded-md px-3 py-2"
               />
-              <button
-                type="button"
-                className="absolute right-3 top-8 text-gray-500"
-                onClick={togglePasswordVisibility}
-              ></button>
             </div>
-            <p className="text-xs text-gray-500 mt-1">
-              Password has to be at least 6 characters.
-            </p>
-          </div>
-
-          <div className="mb-6">
-            <div className="relative">
+            <div>
               <input
-                type={showConfirmPassword ? "text" : "password"}
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm New Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="pr-12"
+                className="w-full border rounded-md px-3 py-2"
               />
+            </div>
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {success && <p className="text-green-600 text-sm">{success}</p>}
+            <div className="flex justify-end space-x-2">
               <button
-                type="button"
-                className="absolute right-3 top-8 text-gray-500"
-                onClick={toggleConfirmPasswordVisibility}
-              ></button>
+                type="reset"
+                className="px-4 py-2 border rounded-md hover:bg-gray-100"
+                onClick={() => {
+                  setPassword("");
+                  setConfirmPassword("");
+                  setError("");
+                  setSuccess("");
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+              >
+                Save
+              </button>
             </div>
-          </div>
-
-          {error && (
-            <div className="mb-4 p-2 bg-red-50 text-red-500 text-sm">
-              {error}
-            </div>
-          )}
-
-          <button type="submit">UPDATE</button>
-        </form>
+          </form>
+        </div>
       </AccountLayout>
     </Layout>
   );

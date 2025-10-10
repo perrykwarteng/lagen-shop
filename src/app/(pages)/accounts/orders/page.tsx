@@ -6,8 +6,10 @@ export default function OrdersPage() {
   return (
     <Layout>
       <AccountLayout>
-        <h1>HISTORY</h1>
-        <OrderList />
+        <div className="bg-white border border-black rounded-[15px] p-6 min-h-[300px]">
+          <h1>HISTORY</h1>
+          <OrderList />
+        </div>
       </AccountLayout>
     </Layout>
   );
