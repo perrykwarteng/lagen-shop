@@ -31,12 +31,13 @@ interface AuthContextType {
 }
 
 interface RegisterPayload {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
-  birthday: string;
+  date_of_birth: string;
   gender: string;
+  newsletter_subscription: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
