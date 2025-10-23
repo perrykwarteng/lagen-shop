@@ -103,7 +103,7 @@ export const MenuList = () => {
         {/* Desktop mega nav - only show if NOT on /collections */}
         {isHoveringCollection && pathName !== "/collections" && (
           <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-screen z-50 md:block">
-            <div className="w-full bg-white border-b absolute md:left-[23%] border-gray-200 shadow-lg">
+            <div className="w-full bg-white border-b absolute md:left-[29%] border-gray-200 shadow-lg">
               <div className="max-w-7xl mx-auto px-6 py-8">
                 <div className="flex justify-start gap-12">
                   <div className="min-w-[200px]">
@@ -186,6 +186,35 @@ export const MenuList = () => {
           </div>
         )}
       </li>
+
+      {/* accessories */}
+      <li
+        className={
+          pathName === "/accessories" ? "active border-b-2 border-black" : ""
+        }
+      >
+        <Link
+          href="/accessories"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
+        >
+          Accessories
+        </Link>
+      </li>
+
+      {/* campaigns */}
+      <li
+        className={
+          pathName === "/campaigns" ? "active border-b-2 border-black" : ""
+        }
+      >
+        <Link
+          href="/campaigns"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
+        >
+          Campaigns
+        </Link>
+      </li>
+
       {/* LOOKBOOK */}
       <li
         className={

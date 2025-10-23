@@ -44,7 +44,7 @@ const categories: Categories = {
 
 export const ShopNav = () => {
   return (
-    <nav className="w-full absolute md:left-[35%] shadow-md bg-white">
+    <nav className="w-full absolute md:left-[38%] shadow-md bg-white">
       {/* Desktop Layout */}
       <div className="hidden md:block border-b border-gray-200 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-8">
