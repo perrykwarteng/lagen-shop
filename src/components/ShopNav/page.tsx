@@ -44,20 +44,22 @@ const categories: Categories = {
 
 export const ShopNav = () => {
   return (
-    <nav className="w-full bg-white">
+    <nav className="w-full absolute md:left-[35%] shadow-md bg-white">
       {/* Desktop Layout */}
       <div className="hidden md:block border-b border-gray-200 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex justify-center gap-16">
             {(Object.keys(categories) as CategoryName[]).map((category) => (
               <div key={category} className="min-w-[250px]">
-                <h3 className="text-lg font-bold mb-6 text-gray-900">{category}</h3>
+                <h3 className="text-lg font-bold mb-6 text-gray-900">
+                  {category}
+                </h3>
                 {categories[category].map((group, i) => (
                   <ul key={i} className="mb-6 space-y-3">
                     {group.map((item) => (
                       <li key={item}>
-                        <Link 
-                          href="#" 
+                        <Link
+                          href="#"
                           className="text-gray-700 text-sm hover:text-black transition-colors duration-200 block py-1"
                         >
                           {item}
@@ -84,8 +86,8 @@ export const ShopNav = () => {
                 <ul key={i} className="mb-4 space-y-2">
                   {group.map((item) => (
                     <li key={item}>
-                      <Link 
-                        href="#" 
+                      <Link
+                        href="#"
                         className="text-gray-700 text-sm hover:text-black transition-colors duration-200 block py-2 px-2 rounded hover:bg-gray-50"
                       >
                         {item}

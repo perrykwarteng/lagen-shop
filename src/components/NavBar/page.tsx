@@ -73,14 +73,18 @@ export const NavBar = ({
         <div className="list one flex items-center gap-2 sm:gap-3 lg:gap-8">
           <p className="text-xs sm:text-sm font-medium">AU$</p>
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
-            <button 
+            <button
               className="p-1 hover:bg-gray-100 rounded transition-colors"
               onClick={handleShowMenu}
               aria-label="Toggle menu"
             >
-              {showMenu ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+              {showMenu ? (
+                <FaTimes className="text-lg" />
+              ) : (
+                <FaBars className="text-lg" />
+              )}
             </button>
-            <button 
+            <button
               className="p-1 hover:bg-gray-100 rounded transition-colors"
               onClick={handleShowSearch}
               aria-label="Toggle search"
@@ -88,7 +92,9 @@ export const NavBar = ({
               <FaSearch className="text-lg" />
             </button>
           </div>
-          <p className="text-xs sm:text-sm font-medium hidden sm:block">100pts</p>
+          <p className="text-xs sm:text-sm font-medium hidden sm:block">
+            100pts
+          </p>
         </div>
 
         <div className="logo">
@@ -143,9 +149,12 @@ export const NavBar = ({
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:block px-5 md:px-10 py-3 gap-3 border-b border-black w-full bg-white">
-        <MenuList />
-      </div>
+
+      {showMenu ? (
+        <div className="hidden md:block px-5 md:px-10 py-3 gap-3 border-b border-black w-full bg-white">
+          <MenuList />
+        </div>
+      ) : null}
 
       {/* Search Bar */}
       <div className={showSearch ? "block relative w-full" : "hidden"}>

@@ -2,6 +2,11 @@ import Layout from "@/components/Layout/layout";
 import Image from "next/image";
 import Link from "next/link";
 
+import EmailIcon from "../../../../public/icons/mail.svg";
+import FacebookIcon from "../../../../public/icons/facebook.svg";
+import InstagramIcon from "../../../../public/icons/instagram.png";
+import TiktokIcon from "../../../../public/icons/tiktok.png";
+
 export default function Contact() {
   return (
     <>
@@ -19,16 +24,16 @@ export default function Contact() {
         </div>
         <div className="px-5 md:px-10 py-3 md:py-10 flex flex-col md:flex-row md:items-center mb-28">
           <div className="w-full">
-            <h3>Get In Touch</h3>
+            <h3 className="text-[20px] text-black font-medium">Get In Touch</h3>
             <div className="mt-4">
               <div className="flex items-center gap-3 my-1">
-                <Image className="w-7" src="/icons/mail.svg" alt="" />
+                <Image className="w-7" src={EmailIcon} alt="" />
                 <Link href="#" className="underline">
                   online@la'gen.com
                 </Link>
               </div>
               <div className="flex items-center gap-3 my-1">
-                <Image className="w-7" src="/icons/facebook.svg" alt="" />
+                <Image className="w-7" src={FacebookIcon} alt="" />
                 <Link href="#" className="underline">
                   Facebook Messenger
                 </Link>
@@ -50,19 +55,33 @@ export default function Contact() {
               <h3 className="font-semibold">Social Media</h3>
               <div className="mt-4">
                 <div className="flex items-center gap-3 my-1">
-                  <Image className="w-7" src="/icons/instagram.png" alt="" width={28} height={28} unoptimized />
+                  <Image
+                    className="w-7"
+                    src={InstagramIcon}
+                    alt=""
+                    width={28}
+                    height={28}
+                    unoptimized
+                  />
                   <Link href="#" className="underline">
                     https://www.instagram.com/la'gen/
                   </Link>
                 </div>
                 <div className="flex items-center gap-3 my-1">
-                  <Image className="w-7" src="/icons/tiktok.png" alt="" width={28} height={28} unoptimized />
+                  <Image
+                    className="w-7"
+                    src={TiktokIcon}
+                    alt=""
+                    width={28}
+                    height={28}
+                    unoptimized
+                  />
                   <Link href="#" className="underline">
                     https://www.tiktok.com/@la'gen
                   </Link>
                 </div>
                 <div className="flex items-center gap-3 my-1">
-                  <Image className="w-7" src="/icons/facebook.svg" alt="" />
+                  <Image className="w-7" src={FacebookIcon} alt="" />
                   <Link href="#" className="underline">
                     https://www.facebook.com/la'gen/
                   </Link>

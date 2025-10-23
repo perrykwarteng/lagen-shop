@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShopNav } from "../ShopNav/page";
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaLock } from "react-icons/fa";
 
 export const MenuList = () => {
   const pathName = usePathname();
@@ -24,7 +24,6 @@ export const MenuList = () => {
           HOME
         </Link>
       </li>
-
       {/* SHOP */}
       <li
         className={`relative ${
@@ -46,7 +45,11 @@ export const MenuList = () => {
             onClick={() => setMobileShopOpen(!mobileShopOpen)}
             aria-label="Toggle shop submenu"
           >
-            {mobileShopOpen ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+            {mobileShopOpen ? (
+              <FaChevronUp className="text-sm" />
+            ) : (
+              <FaChevronDown className="text-sm" />
+            )}
           </button>
         </div>
 
@@ -64,14 +67,17 @@ export const MenuList = () => {
           </div>
         )}
       </li>
-
       {/* COLLECTION */}
       <li
         className={`relative ${
           pathName === "/collections" ? "active border-b-2 border-black" : ""
         }`}
-        onMouseEnter={() => pathName !== "/collections" && setIsHoveringCollection(true)}
-        onMouseLeave={() => pathName !== "/collections" && setIsHoveringCollection(false)}
+        onMouseEnter={() =>
+          pathName !== "/collections" && setIsHoveringCollection(true)
+        }
+        onMouseLeave={() =>
+          pathName !== "/collections" && setIsHoveringCollection(false)
+        }
       >
         <div className="flex items-center justify-between">
           <Link
@@ -86,31 +92,46 @@ export const MenuList = () => {
             onClick={() => setMobileCollectionOpen(!mobileCollectionOpen)}
             aria-label="Toggle collections submenu"
           >
-            {mobileCollectionOpen ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+            {mobileCollectionOpen ? (
+              <FaChevronUp className="text-sm" />
+            ) : (
+              <FaChevronDown className="text-sm" />
+            )}
           </button>
         </div>
 
         {/* Desktop mega nav - only show if NOT on /collections */}
         {isHoveringCollection && pathName !== "/collections" && (
           <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-screen z-50 md:block">
-            <div className="w-full bg-white border-b border-gray-200 shadow-lg">
+            <div className="w-full bg-white border-b absolute md:left-[23%] border-gray-200 shadow-lg">
               <div className="max-w-7xl mx-auto px-6 py-8">
-                <div className="flex justify-center gap-12">
+                <div className="flex justify-start gap-12">
                   <div className="min-w-[200px]">
-                    <h3 className="text-lg font-bold mb-4">Featured Collections</h3>
+                    <h3 className="text-lg font-bold mb-4">
+                      Featured Collections
+                    </h3>
                     <ul className="space-y-1">
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black"
+                        >
                           New Arrivals
                         </Link>
                       </li>
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black"
+                        >
                           Best Sellers
                         </Link>
                       </li>
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black"
+                        >
                           Seasonal
                         </Link>
                       </li>
@@ -129,20 +150,31 @@ export const MenuList = () => {
               <div className="px-4 py-4">
                 <div className="space-y-3">
                   <div>
-                    <h3 className="text-base font-bold mb-3">Featured Collections</h3>
+                    <h3 className="text-base font-bold mb-3">
+                      Featured Collections
+                    </h3>
                     <ul className="space-y-2">
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black block py-1">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black block py-1"
+                        >
                           New Arrivals
                         </Link>
                       </li>
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black block py-1">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black block py-1"
+                        >
                           Best Sellers
                         </Link>
                       </li>
                       <li>
-                        <Link href="#" className="text-gray-800 text-sm hover:text-black block py-1">
+                        <Link
+                          href="#"
+                          className="text-gray-800 text-sm hover:text-black block py-1"
+                        >
                           Seasonal
                         </Link>
                       </li>
@@ -154,9 +186,12 @@ export const MenuList = () => {
           </div>
         )}
       </li>
-
       {/* LOOKBOOK */}
-      <li className={pathName === "/lookbook" ? "active border-b-2 border-black" : ""}>
+      <li
+        className={
+          pathName === "/lookbook" ? "active border-b-2 border-black" : ""
+        }
+      >
         <Link
           href="/lookbook"
           className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
@@ -165,8 +200,32 @@ export const MenuList = () => {
         </Link>
       </li>
 
+      {/* Mystery Box */}
+      <li className={pathName === "" ? "active border-b-2 border-black" : ""}>
+        <Link
+          href="/"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
+        >
+          Mystery Box
+        </Link>
+      </li>
+      {/* Mystery Vault */}
+      <li className={pathName === "" ? "active border-b-2  border-black" : ""}>
+        <Link
+          href="/"
+          className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer py-2 md:py-0 flex items-center gap-2"
+        >
+          Mystery Vault
+          <FaLock />
+        </Link>
+      </li>
+
       {/* ABOUT */}
-      <li className={pathName === "/about" ? "active border-b-2 border-black" : ""}>
+      <li
+        className={
+          pathName === "/about" ? "active border-b-2 border-black" : ""
+        }
+      >
         <Link
           href="/about"
           className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
@@ -174,9 +233,12 @@ export const MenuList = () => {
           About
         </Link>
       </li>
-
       {/* CONTACT */}
-      <li className={pathName === "/contact" ? "active border-b-2 border-black" : ""}>
+      <li
+        className={
+          pathName === "/contact" ? "active border-b-2 border-black" : ""
+        }
+      >
         <Link
           href="/contact"
           className="text-sm sm:text-base font-medium hover:text-gray-700 cursor-pointer block py-2 md:py-0"
